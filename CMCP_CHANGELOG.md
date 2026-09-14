@@ -124,3 +124,18 @@
 - Re-run final quality, coverage, canon, runtime, Composer validation, syntax and Doctrine mapping checks after journal/helper cleanup.
 - Inspect Git worktree/HEAD/remote/upstream; create a coherent signed commit when permitted, publish only if a real remote exists, then re-run post-integration acceptance.
 - Full PostgreSQL migration-currentness remains dependent on valid local database credentials or an isolated disposable PostgreSQL environment; do not mark that specific runtime check green without factual execution.
+
+### Iteration 4 — debt closure and integration
+
+- Final pre-integration gates were green: normal Composer validation, PHPStan, PHPUnit 12 tests / 58 assertions, CS dry-run, standalone Symfony boot, Doctrine mapping validation, PHP syntax, Canon031 PHPDoc coverage 100% classes / 85.5% methods, and Canon040 coverage 90.6% lines / 90.7% methods / 100% branches.
+- Strict Composer validation reports warnings only for the explicit root version and canonical local `*@dev` sibling constraints; there are no lock/schema errors.
+- Generated `.codebase-memory/` is ignored rather than committed; its pre-existing artifact had no commit identity and is runtime-derived.
+- Created signed root commit `570471d` (`feat: harden Merchandising for RC`).
+- Post-commit inspection found embedded Gating IDE state and historical command logs accidentally included with the pre-existing policy copy. They were removed from the index only, working-tree copies preserved, and root ignore coverage was extended for `.gating/.idea/` and `.gating/.commanding/log/`.
+- No Git remote exists (`originConfigured=false`), so push/PR cannot be performed truthfully in this workspace.
+
+### Iteration 5 — final acceptance target
+
+- Commit the confirmed nested-noise cleanup and this journal update.
+- Re-run post-integration quality, Canon/Gating, standalone runtime, coverage freshness, Doctrine mapping, and worktree/HEAD checks.
+- Acceptance may close with one environment blocker only: actual PostgreSQL migration-currentness cannot be executed until valid local database credentials or an isolated disposable PostgreSQL instance are available.

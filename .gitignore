@@ -1,5 +1,7 @@
 /vendor/
 /.codebase-memory/
+/.gating/.idea/
+/.gating/.commanding/log/
 /var/
 /.phpunit.cache/
 /.php-cs-fixer.cache
