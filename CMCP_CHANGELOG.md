@@ -151,3 +151,50 @@
 - Git remote inspection confirms there is no configured `origin`; publication/PR is therefore unavailable rather than pending.
 - Signed integration commits: `570471d` (`feat: harden Merchandising for RC`) and `dd6ee8c` (`chore: finalize Merchandising RC integration`).
 - RC implementation is accepted with the explicitly bounded external PostgreSQL credential blocker; no authorized in-scope code, packaging, test, canon, documentation, or Git-hygiene repair remains.
+
+## RC continuation — Canon043/045 development Composer policy — 2026-09-14
+
+### Reconnaissance and canon mapping
+
+- Re-read target `AGENTS.md`, `README.md`, `composer.json`, architecture regression coverage, representative entities, and the prior orchestration journal.
+- Re-read mandatory helper contracts for Objecting, Cruding, Viewing, and Interfacing; also checked Collectioning and Tabling because they are direct runtime dependencies and participate in the local Composer dependency closure.
+- Re-read Canonization as authoritative textual policy and Gating as the executable companion. Newly materialized rules consulted: `Canon043DevelopmentComposerDependencyVersionRule`, `Canon044ObjectingSystemFieldNamingRule`, and `Canon045DevelopmentComposerRepositoryClosureRule`, plus the current architecture guard matrix.
+- External merchandising benchmark reconfirmed the boundary: composition/rules/preview/lifecycle/measurement are mature merchandising concerns; recommendation ML, behavioral-data ownership, search ranking engines, product/category truth, payment, and shipping remain outside this component.
+- Existing `.gating` working-tree changes were present before this pass, including a deleted Merchandising profile and in-progress Canon043-045 Gating implementation. They are treated as external/unowned changes and were not modified.
+
+### Selected RC-critical workstream
+
+- Bring development Composer local first-party dependency identity into Canon043 compliance without changing production-version policy.
+- Preserve and regression-test the already complete Canon045 local repository closure.
+- Verify Canon044 on the active Doctrine entity surface without mechanically reclassifying business fields as Objecting system fields.
+
+### Material implementation
+
+- Changed development `composer.json` to `minimum-stability: dev` with `prefer-stable: true`.
+- Replaced all six local first-party dependency constraints with exact `dev-master`: Collectioning, Cruding, Interfacing, Objecting, Tabling, and Viewing.
+- Added `options.versions[package] = dev-master` to every corresponding local symlink path repository.
+- Extended `MerchArchitectureTest` to enforce the development stability policy, exact dependency constraints, symlink wiring, package-version identity, and complete six-package local repository set.
+- Updated `composer.lock` with a package-scoped Composer update; first-party feature-branch lock identities were normalized to `dev-master`. Doctrine ORM also advanced from 3.7.0 to 3.7.1 as an allowed transitive update.
+
+### Verification
+
+- `composer validate --strict --check-lock`: manifest/lock are valid; only the pre-existing root `version` warning remains. The former local `*@dev` warning is gone.
+- `composer quality`: green — PHPStan 0 errors, PHPUnit 12 tests / 80 assertions, PHP-CS-Fixer dry run clean.
+- Standalone runtime: green — Symfony 8.1.6 / PHP 8.4.13, `App\\Merchandising\\Kernel` boots.
+- Doctrine mapping validation: green; database synchronicity intentionally skipped by the mapping-only check.
+- Composer update reported no security vulnerability advisories.
+- Canon execution is currently tooling-blocked before rule evaluation because the externally modified `.gating` tree no longer contains `.gating/.gating/profile/component/merchandising.yaml`. No attempt was made to restore or overwrite that unowned dirty state.
+- Canon044 factual mapping check: active Merchandising Doctrine entities use entity-native business fields and contain no `object_*`/`objecting_*` persisted property or column names.
+
+### Growth workstream (non-blocking)
+
+- Merchant-controlled pin/boost/bury rules with deterministic preview.
+- Draft/activation lifecycle and audit diagnostics for composed surfaces.
+- Placement effectiveness metrics and experimentation hooks using typed external inputs.
+- Recommendation/personalization integration only through contracts; model training, behavioral event ownership, product/category truth, and search engine ownership remain outside Merchandising.
+
+### Remaining acceptance tail
+
+- Inspect final Git diff/status and ensure only Merchandising-owned target files from this pass are committed.
+- Do not stage or commit the pre-existing `.gating` modifications/deletion.
+- Re-run post-commit package quality and inspect branch/upstream state. Canon remains externally blocked until the Gating profile is restored by its owning change.

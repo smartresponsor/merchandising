@@ -44,14 +44,31 @@ final class MerchArchitectureTest extends TestCase
 
         self::assertSame('merchandising/merch', $composer['name']);
         self::assertSame('src/', $composer['autoload']['psr-4']['App\\Merchandising\\']);
+        self::assertSame('dev', $composer['minimum-stability']);
+        self::assertTrue($composer['prefer-stable']);
 
-        foreach ([
-            'cruding/crud',
-            'interfacing/interface',
-            'objecting/object',
-            'viewing/view',
-        ] as $package) {
-            self::assertArrayHasKey($package, $composer['require']);
+        $localPackages = [
+            '../Collectioning' => 'collectioning/collection',
+            '../Cruding' => 'cruding/crud',
+            '../Interfacing' => 'interfacing/interface',
+            '../Objecting' => 'objecting/object',
+            '../Tabling' => 'tabling/table',
+            '../Viewing' => 'viewing/view',
+        ];
+
+        foreach ($localPackages as $package) {
+            self::assertSame('dev-master', $composer['require'][$package]);
+        }
+
+        $repositories = [];
+        foreach ($composer['repositories'] as $repository) {
+            $repositories[$repository['url']] = $repository;
+        }
+
+        foreach ($localPackages as $url => $package) {
+            self::assertArrayHasKey($url, $repositories);
+            self::assertTrue($repositories[$url]['options']['symlink']);
+            self::assertSame('dev-master', $repositories[$url]['options']['versions'][$package]);
         }
     }
 }
