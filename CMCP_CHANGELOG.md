@@ -150,7 +150,15 @@
 - `doctrine:migrations:up-to-date` was re-run and remains externally blocked by PostgreSQL authentication (`fe_sendauth: no password supplied`) for local user `app` on `127.0.0.1:5432`.
 - Git remote inspection confirms there is no configured `origin`; publication/PR is therefore unavailable rather than pending.
 - Signed integration commits: `570471d` (`feat: harden Merchandising for RC`) and `dd6ee8c` (`chore: finalize Merchandising RC integration`).
-- RC implementation is accepted with the explicitly bounded external PostgreSQL credential blocker; no authorized in-scope code, packaging, test, canon, documentation, or Git-hygiene repair remains.
+- RC implementation was initially accepted with an external PostgreSQL credential blocker; that blocker was subsequently resolved from the existing `www/App` environment without persisting or exposing the secret.
+
+### PostgreSQL blocker closure
+
+- Confirmed `www/App/tools/resolve-database-url.php` is the canonical local resolver: it boots `App/.env` through Symfony Dotenv and emits encoded connection parts without committing credentials.
+- Reused that resolver transiently to provide `DATABASE_URL` to Merchandising for `composer quality:doctrine:migrations`; no password was copied into Merchandising configuration, source, journal, Git history, or command output.
+- `quality:doctrine:migrations` completed with exit code 0 using the App-local credential, closing the final environment verification blocker.
+- The one-off bridge helper was moved to ignored `var/` after execution and is not product tooling.
+- RC implementation and verification are now fully green within the local environment; the only remaining publication limitation is the absence of a configured Git remote (`originConfigured=false`).
 
 ## RC continuation — Canon043/045 development Composer policy — 2026-09-14
 
