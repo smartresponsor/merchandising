@@ -1,0 +1,53 @@
+schema_version: '1.0'
+component: merchandising
+integration_model: direct_neighbor_source_contracts
+summary: >-
+  Merchandising receives display-safe candidates through explicit source interfaces implemented by the neighboring
+  owner components. UIBridging is reserved for output/surface adaptation to Interfacing.
+canonical_rules:
+  direct_neighbor_contracts: true
+  universal_data_bridge_allowed: false
+  ui_bridging_for_data_acquisition_allowed: false
+  direct_neighbor_database_reads_allowed: false
+  owner_side_implementations_required: true
+service_tags:
+  candidate_source: app.merchandising.candidate_source
+  direct_neighbor_source: app.merchandising.direct_neighbor_source
+contracts:
+  generic: App\Merchandising\ServiceInterface\Source\MerchCandidateSourceInterface
+  direct_neighbor_marker: App\Merchandising\ServiceInterface\Source\MerchDirectNeighborSourceInterface
+  candidate_dto: App\Merchandising\ValueObject\MerchCandidateView
+  contract_topology_dto: App\Merchandising\ValueObject\MerchSourceContractView
+owner_implementations:
+  cataloging:
+    interface: App\Merchandising\ServiceInterface\Source\MerchCategorySourceInterface
+    recommended_class: CatalogingMerchandisingCategorySource
+    owner_component: Cataloging
+  producting:
+    interface: App\Merchandising\ServiceInterface\Source\MerchProductSourceInterface
+    recommended_class: ProductingMerchandisingProductSource
+    owner_component: Producting
+  projecting:
+    interface: App\Merchandising\ServiceInterface\Source\MerchProjectSourceInterface
+    recommended_class: ProjectingMerchandisingProjectSource
+    owner_component: Projecting
+  vendoring:
+    interface: App\Merchandising\ServiceInterface\Source\MerchVendorSourceInterface
+    recommended_class: VendoringMerchandisingVendorSource
+    owner_component: Vendoring
+  usering:
+    interface: App\Merchandising\ServiceInterface\Source\MerchUserSourceInterface
+    recommended_class: UseringMerchandisingUserSource
+    owner_component: Usering
+  advertising:
+    interface: App\Merchandising\ServiceInterface\Source\MerchAdvertisingSourceInterface
+    recommended_class: AdvertisingMerchandisingAdvertisingSource
+    owner_component: Advertising
+agent_instructions:
+  where_to_add_source_logic: owner_component
+  where_not_to_add_source_logic:
+    - Merchandising source component internals
+    - UIBridging
+    - Interfacing templates
+    - host application controllers
+  runtime_owner: host_application_service_container

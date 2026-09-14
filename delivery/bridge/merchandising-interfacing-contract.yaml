@@ -1,0 +1,36 @@
+schema: smart_responsor.bridge_contract.v1
+from: Merchandising
+to: Interfacing
+via: Bridging
+contract: merchandising.interfacing.payload.v1
+providerInterface: App\\Merchandising\\ServiceInterface\\MerchInterfacingPayloadProviderInterface
+payload:
+  component: merchandising
+  screen:
+    key: string
+    title: string
+    kind: merchandising_surface
+  surface:
+    key: string
+    title: string
+    surfaceType: string
+    sections: list
+renderingNotes:
+  - Interfacing owns templates and widgets.
+  - Merchandising owns section composition and ordering.
+  - Bridging maps section types to Interfacing widget templates.
+sectionTypes:
+  - hero
+  - card_grid
+  - product_strip
+  - category_grid
+  - project_strip
+  - vendor_strip
+  - banner
+  - masonry
+
+inputAcquisition:
+  mode: neighbor-source-contracts
+  directNeighborDatabaseReads: forbidden
+  candidateContract: App\\Merchandising\\Value\\MerchCandidateView
+  collectorInterface: App\\Merchandising\\ServiceInterface\\MerchCandidateCollectorInterface

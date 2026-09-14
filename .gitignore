@@ -1,0 +1,12 @@
+/vendor/
+/.codebase-memory/
+/var/
+/.phpunit.cache/
+/.php-cs-fixer.cache
+/composer.lock
+/.env
+/.env.local
+/.idea/
+/.vscode/
+/.DS_Store
+/Thumbs.db

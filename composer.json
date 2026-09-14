@@ -1,0 +1,107 @@
+{
+  "name": "merchandising/merch",
+  "description": "Merchandising process app",
+  "type": "symfony-bundle",
+  "license": "proprietary",
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "require": {
+    "php": "^8.4",
+    "collectioning/collection": "*@dev",
+    "cruding/crud": "*@dev",
+    "easycorp/easyadmin-bundle": "^5.0",
+    "interfacing/interface": "*@dev",
+    "objecting/object": "*@dev",
+    "tabling/table": "*@dev",
+    "viewing/view": "*@dev",
+    "symfony/config": "^8.1",
+    "symfony/console": "^8.1",
+    "symfony/dependency-injection": "^8.1",
+    "symfony/framework-bundle": "^8.1",
+    "symfony/http-foundation": "^8.1",
+    "symfony/http-kernel": "^8.1",
+    "symfony/routing": "^8.1",
+    "symfony/serializer": "^8.1",
+    "doctrine/orm": "^3.6",
+    "doctrine/doctrine-bundle": "^3.0",
+    "doctrine/doctrine-migrations-bundle": "^4.0"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^2.1",
+    "phpstan/phpstan-doctrine": "^2.0",
+    "phpunit/phpunit": "^12.0",
+    "friendsofphp/php-cs-fixer": "^3.65",
+    "symfony/phpunit-bridge": "^8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\Merchandising\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "App\\Merchandising\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "runtime:about": "php bin/console about",
+    "canon:check": "php .gating/bin/gating check --target=. --profile=.gating/.gating/profile/component/merchandising.yaml --policy-root=.gating/.gating --severity-config=.gating/.gating/config/severity.yaml",
+    "quality:doctrine:schema": "php bin/console doctrine:schema:validate --skip-sync --no-interaction",
+    "quality:doctrine:migrations": "php bin/console doctrine:migrations:up-to-date --no-interaction",
+    "quality:doctrine": ["@quality:doctrine:schema", "@quality:doctrine:migrations"],
+    "quality:phpstan": "phpstan analyse --memory-limit=1G",
+    "quality:phpunit": "phpunit -c phpunit.xml.dist",
+    "quality:phpunit:coverage": ["@php -r \"if (!is_dir('var/coverage')) { mkdir('var/coverage', 0777, true); }\"", "@php -d xdebug.mode=coverage vendor/bin/phpunit -c phpunit.xml.dist --path-coverage --coverage-text=var/coverage/summary.txt"],
+    "quality:cs:dry": "php-cs-fixer fix --dry-run --diff --config=.php-cs-fixer.php",
+    "quality:cs:fix": "php-cs-fixer fix --config=.php-cs-fixer.php",
+    "quality": [
+      "@quality:phpstan",
+      "@quality:phpunit",
+      "@quality:cs:dry"
+    ],
+    "quality:po": "@quality",
+    "quality:post": "@quality",
+    "quality:post-seal-owner-handoff-index": "@quality",
+    "quality:rc-owner-review-final-seal": "@quality"
+  },
+  "config": {
+    "allow-plugins": {
+      "symfony/flex": true,
+      "symfony/runtime": true
+    },
+    "sort-packages": true
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../Collectioning",
+      "options": {"symlink": true}
+    },
+    {
+      "type": "path",
+      "url": "../Tabling",
+      "options": {"symlink": true}
+    },
+    {
+      "type": "path",
+      "url": "../Cruding",
+      "options": {"symlink": true}
+    },
+    {
+      "type": "path",
+      "url": "../Interfacing",
+      "options": {"symlink": true}
+    },
+    {
+      "type": "path",
+      "url": "../Objecting",
+      "options": {"symlink": true}
+    },
+    {
+      "type": "path",
+      "url": "../Viewing",
+      "options": {"symlink": true}
+    }
+  ],
+  "version": "0.1.0-dev"
+}

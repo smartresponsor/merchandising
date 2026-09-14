@@ -1,0 +1,34 @@
+schema: smart_responsor.component_manifest.v1
+component: Merchandising
+composerPackage: merchandising/merch
+namespace: App\\Merchandising
+businessStem: Merch
+databasePrefix: merch_
+php: '^8.4'
+symfony: '^8.0'
+responsibility: storefront composition, merchandising surfaces, placements, user-facing section ordering
+forbidden:
+  - src/Domain
+  - direct ownership of Producting/Cataloging/Projecting/Vendoring entities
+  - direct database reads from neighboring component tables as primary acquisition path
+  - injecting neighboring Doctrine repositories for storefront composition
+  - HTML/Twig hardcoded demo data as source of truth
+contracts:
+  candidateInput:
+    - App\\Merchandising\\Value\\MerchCandidateView
+    - App\\Merchandising\\ServiceInterface\\Source\\MerchCandidateSourceInterface
+    - App\\Merchandising\\ServiceInterface\\MerchCandidateCollectorInterface
+  output:
+    - App\\Merchandising\\Value\\MerchSurfaceView
+    - App\\Merchandising\\Value\\MerchSectionView
+    - App\\Merchandising\\Value\\MerchItemView
+    - App\\Merchandising\\Value\\MerchActionView
+  bridge:
+    - App\\Merchandising\\ServiceInterface\\MerchInterfacingPayloadProviderInterface
+sourceBridges:
+  - Cataloging
+  - Producting
+  - Projecting
+  - Vendoring
+  - Accessing/Usering
+  - Advertising later

@@ -1,0 +1,31 @@
+schema_version: '1.0'
+component: merchandising
+owns:
+  - merchandising surfaces
+  - sections
+  - placements
+  - slots
+  - ranking and composition
+  - merchandising candidate DTOs
+  - source interfaces consumed by Merchandising
+  - output surface contract for UI bridging
+does_not_own:
+  - product entities
+  - category entities
+  - project entities
+  - vendor entities
+  - user entities
+  - payment entities
+  - source component repositories
+  - Interfacing templates
+  - UIBridging payload rendering
+integration_rules:
+  source_components_implement_merchandising_interfaces: true
+  merchandising_queries_neighbor_databases: false
+  universal_dto_bridging_component: forbidden_by_default
+  ui_bridging_scope: output_surface_to_interfacing_only
+agent_routing:
+  add_product_candidate_logic_to: Producting/src/Service/Merchandising/ProductingMerchandisingProductSource.php
+  add_category_candidate_logic_to: Cataloging/src/Service/Merchandising/CatalogingMerchandisingCategorySource.php
+  add_project_candidate_logic_to: Projecting/src/Service/Merchandising/ProjectingMerchandisingProjectSource.php
+  add_vendor_candidate_logic_to: Vendoring/src/Service/Merchandising/VendoringMerchandisingVendorSource.php

@@ -1,0 +1,8 @@
+doctrine_migrations:
+  migrations_paths:
+    'App\Merchandising\Migration': '%kernel.project_dir%/migrations'
+  storage:
+    table_storage:
+      table_name: merch_migration_versions
+  all_or_nothing: true
+  check_database_platform: true

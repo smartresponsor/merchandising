@@ -1,0 +1,28 @@
+doctrine:
+  dbal:
+    default_connection: data
+    connections:
+      data:
+        driver: pdo_pgsql
+        host: 127.0.0.1
+        port: 5432
+        dbname: merchandising
+        user: app
+        password: ''
+        server_version: '16'
+      infra:
+        driver: pdo_sqlite
+        path: '%kernel.project_dir%/var/infra.db'
+  orm:
+    default_entity_manager: default
+    entity_managers:
+      default:
+        connection: data
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        mappings:
+          Merchandising:
+            type: attribute
+            dir: '%kernel.project_dir%/src/Entity'
+            prefix: 'App\Merchandising\Entity'
+            alias: Merch
+            is_bundle: false

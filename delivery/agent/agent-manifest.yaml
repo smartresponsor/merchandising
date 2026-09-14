@@ -1,0 +1,12 @@
+schema: smart_responsor.agent_manifest.v1
+component: Merchandising
+instructions:
+  - Treat this repository as the merchandising/storefront-composition owner.
+  - Do not move business truth for products, categories, projects, vendors, users, payments, or shipping here.
+  - Keep source contracts mirrored under ServiceInterface/Source and Service/Source.
+  - Keep output values renderer-neutral and bridge-ready.
+  - Preserve descriptive docblocks; type-only docblock changes are allowed.
+quality:
+  phpstan: phpstan analyse --memory-limit=1G
+  phpunit: phpunit -c phpunit.xml.dist
+  csDryRun: php-cs-fixer fix --dry-run --diff --config=.php-cs-fixer.php
