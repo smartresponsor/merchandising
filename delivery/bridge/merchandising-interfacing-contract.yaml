@@ -9,11 +9,11 @@ payload:
   screen:
     key: string
     title: string
-    kind: merchandising_surface
-  surface:
+    kind: merchandising
+  merch:
     key: string
     title: string
-    surfaceType: string
+    type: string
     sections: list
 renderingNotes:
   - Interfacing owns templates and widgets.

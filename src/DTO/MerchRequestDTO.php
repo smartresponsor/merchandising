@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace App\Merchandising\DTO;
 
 /**
- * Defines the MerchSurfaceRequestDTO contract and behavior within Merchandising.
+ * Defines the MerchRequestDTO contract and behavior within Merchandising.
  */
-final readonly class MerchSurfaceRequestDTO
+final readonly class MerchRequestDTO
 {
     /**
      * @param array<string, scalar|null> $context

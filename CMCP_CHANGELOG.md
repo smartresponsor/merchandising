@@ -238,3 +238,14 @@
 - Replaced the hardcoded blank-password Doctrine connection with a secret-free `MERCH_DATA_DATABASE_URL` runtime override and local fallback URL. No credential is persisted or logged.
 - Retained `bin/merch-db-bootstrap.ps1` only as an explicit process-env consumer; it no longer attempts to cross the Console workspace-secret boundary. Added `/.console-mcp/` to `.gitignore` for bounded-run artifacts.
 - Current remaining blocker is capability-level credential injection into the Merchandising Doctrine process, not missing credentials in App and not a target-code defect.
+
+### Canonical dual-runtime and vocabulary correction — 2026-09-14
+
+- Reaffirmed the canonical runtime contract: every component may run standalone with its own local credentials/configuration, or as a reusable bundle inside `App`, where it uses host-provided Doctrine/DBAL infrastructure. No third credential-bridge mode is allowed.
+- Removed `bin/merch-db-bootstrap.ps1` from the product tree. Merchandising no longer attempts to resolve, copy, or bridge host credentials from `App`; standalone database configuration remains environment-driven and bundle mode remains host-owned.
+- Confirmed `MerchBundle` is infrastructure-neutral and does not import standalone Doctrine package configuration into the host.
+- Removed the `Surface` token from current component-owned runtime and contract names: `MerchController`, `MerchRequestDTO`, `MerchEntity`, `MerchProvider`, `MerchProviderInterface`, `MerchRepository`, and `MerchView` are now canonical.
+- Renamed route/config and contract artifacts to `config/routes/merch_routes.yaml` and `delivery/contracts/merchandising-output.schema.json`; updated payload/contract vocabulary to `merch` / `merchandising.output.v1`.
+- Renamed the primary persistence table to `merch_composition` with `merch_key` and `type`, preserving the required `merch_` database prefix without reintroducing `Surface`.
+- Updated target-owned Gating profile to remove obsolete Surface-bearing legacy/stale names while keeping the current `Merch` subject vocabulary authoritative.
+- Verification: `composer quality` green (PHPStan 0 errors, PHPUnit 12/12 with 80 assertions, CS clean); fresh coverage green at 90.6% lines, 90.7% methods, 100% branches; `composer canon:check` green with 44 rules, 0 failed, 0 warning, 3 justified profile-conditional skips; standalone Symfony 8.1.6 / PHP 8.4.13 boot green; Doctrine mapping green.

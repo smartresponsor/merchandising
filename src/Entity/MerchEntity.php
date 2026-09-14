@@ -7,11 +7,11 @@ namespace App\Merchandising\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
-#[ORM\Table(name: 'merch_surface')]
+#[ORM\Table(name: 'merch_composition')]
 /**
- * Defines the MerchSurfaceEntity contract and behavior within Merchandising.
+ * Defines the MerchEntity contract and behavior within Merchandising.
  */
-class MerchSurfaceEntity
+class MerchEntity
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -19,13 +19,13 @@ class MerchSurfaceEntity
     private ?int $id = null;
 
     #[ORM\Column(length: 120, unique: true)]
-    private string $surfaceKey = '';
+    private string $merchKey = '';
 
     #[ORM\Column(length: 180)]
     private string $title = '';
 
     #[ORM\Column(length: 80)]
-    private string $surfaceType = 'storefront_home';
+    private string $type = 'storefront_home';
 
     #[ORM\Column(length: 40)]
     private string $status = 'draft';
@@ -41,17 +41,17 @@ class MerchSurfaceEntity
     /**
      * Returns the stable business key that identifies this merchandising surface.
      */
-    public function getSurfaceKey(): string
+    public function getMerchKey(): string
     {
-        return $this->surfaceKey;
+        return $this->merchKey;
     }
 
     /**
      * Updates the stable business key that identifies this merchandising surface.
      */
-    public function setSurfaceKey(string $surfaceKey): self
+    public function setMerchKey(string $merchKey): self
     {
-        $this->surfaceKey = $surfaceKey;
+        $this->merchKey = $merchKey;
 
         return $this;
     }
@@ -77,17 +77,17 @@ class MerchSurfaceEntity
     /**
      * Returns the renderer-neutral type assigned to this merchandising surface.
      */
-    public function getSurfaceType(): string
+    public function getType(): string
     {
-        return $this->surfaceType;
+        return $this->type;
     }
 
     /**
      * Updates the renderer-neutral type assigned to this merchandising surface.
      */
-    public function setSurfaceType(string $surfaceType): self
+    public function setType(string $type): self
     {
-        $this->surfaceType = $surfaceType;
+        $this->type = $type;
 
         return $this;
     }

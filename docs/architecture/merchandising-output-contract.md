@@ -1,6 +1,6 @@
 # Merchandising Output Contract
 
-`MerchSurfaceView` is the renderer-neutral contract consumed by Bridging. It is intentionally not Twig, React, Ant Design, or ProComponents specific.
+`MerchView` is the renderer-neutral contract consumed by Bridging. It is intentionally not Twig, React, Ant Design, or ProComponents specific.
 
 The bridge maps section types to Interfacing widgets:
 

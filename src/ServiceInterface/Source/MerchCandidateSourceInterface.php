@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Merchandising\ServiceInterface\Source;
 
-use App\Merchandising\DTO\MerchSurfaceRequestDTO;
+use App\Merchandising\DTO\MerchRequestDTO;
 use App\Merchandising\ValueObject\MerchCandidateView;
 
 /**
@@ -33,5 +33,5 @@ interface MerchCandidateSourceInterface
      *
      * @return list<MerchCandidateView>
      */
-    public function provideCandidates(MerchSurfaceRequestDTO $request, string $slotKey, int $limit = 8): array;
+    public function provideCandidates(MerchRequestDTO $request, string $slotKey, int $limit = 8): array;
 }

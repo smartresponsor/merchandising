@@ -4,25 +4,25 @@ declare(strict_types=1);
 
 namespace App\Merchandising\Tests\Unit;
 
+use App\Merchandising\Entity\MerchEntity;
 use App\Merchandising\Entity\MerchPlacementEntity;
 use App\Merchandising\Entity\MerchSectionEntity;
-use App\Merchandising\Entity\MerchSurfaceEntity;
 use PHPUnit\Framework\TestCase;
 
 final class MerchEntityTest extends TestCase
 {
     public function testEntitiesExposeTheirBusinessFields(): void
     {
-        $surface = (new MerchSurfaceEntity())
-            ->setSurfaceKey('home')
+        $merch = (new MerchEntity())
+            ->setMerchKey('home')
             ->setTitle('Home')
-            ->setSurfaceType('storefront_home')
+            ->setType('storefront_home')
             ->setStatus('active');
-        self::assertNull($surface->getId());
-        self::assertSame('home', $surface->getSurfaceKey());
-        self::assertSame('Home', $surface->getTitle());
-        self::assertSame('storefront_home', $surface->getSurfaceType());
-        self::assertSame('active', $surface->getStatus());
+        self::assertNull($merch->getId());
+        self::assertSame('home', $merch->getMerchKey());
+        self::assertSame('Home', $merch->getTitle());
+        self::assertSame('storefront_home', $merch->getType());
+        self::assertSame('active', $merch->getStatus());
 
         $section = (new MerchSectionEntity())
             ->setSectionKey('top_products')

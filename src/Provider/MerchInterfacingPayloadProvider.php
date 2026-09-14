@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Merchandising\Provider;
 
-use App\Merchandising\DTO\MerchSurfaceRequestDTO;
+use App\Merchandising\DTO\MerchRequestDTO;
 use App\Merchandising\ProviderInterface\MerchInterfacingPayloadProviderInterface;
-use App\Merchandising\ProviderInterface\MerchSurfaceProviderInterface;
+use App\Merchandising\ProviderInterface\MerchProviderInterface;
 
 /**
  * Defines the MerchInterfacingPayloadProvider contract and behavior within Merchandising.
@@ -17,7 +17,7 @@ final readonly class MerchInterfacingPayloadProvider implements MerchInterfacing
      * Initializes the MerchInterfacingPayloadProvider.
      */
     public function __construct(
-        private MerchSurfaceProviderInterface $surfaceProvider,
+        private MerchProviderInterface $merchProvider,
     ) {
     }
 
@@ -26,19 +26,19 @@ final readonly class MerchInterfacingPayloadProvider implements MerchInterfacing
      *
      * @return array<string, mixed>
      */
-    public function provideInterfacingPayload(string $surfaceKey, MerchSurfaceRequestDTO $request): array
+    public function provideInterfacingPayload(string $merchKey, MerchRequestDTO $request): array
     {
-        $surface = $this->surfaceProvider->provideSurface($surfaceKey, $request);
+        $merch = $this->merchProvider->provide($merchKey, $request);
 
         return [
             'component' => 'merchandising',
             'contract' => 'merchandising.interfacing.payload.v1',
             'screen' => [
-                'key' => 'merchandising.' . $surface->key,
-                'title' => $surface->title,
-                'kind' => 'merchandising_surface',
+                'key' => 'merchandising.' . $merch->key,
+                'title' => $merch->title,
+                'kind' => 'merchandising',
             ],
-            'surface' => $surface->toArray(),
+            'merch' => $merch->toArray(),
         ];
     }
 }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Merchandising\Tests\Unit;
 
-use App\Merchandising\DTO\MerchSurfaceRequestDTO;
+use App\Merchandising\DTO\MerchRequestDTO;
 use App\Merchandising\Service\MerchCandidateCollector;
 use App\Merchandising\ServiceInterface\Source\MerchCandidateSourceInterface;
 use App\Merchandising\ServiceInterface\Source\MerchDirectNeighborSourceInterface;
@@ -16,7 +16,7 @@ final class MerchCandidateCollectorTest extends TestCase
 {
     public function testCollectorFiltersUnsafeCandidatesSortsAndLimitsResults(): void
     {
-        $request = new MerchSurfaceRequestDTO(locale: 'en');
+        $request = new MerchRequestDTO(locale: 'en');
         $source = new class () implements MerchCandidateSourceInterface {
             public function sourceKey(): string
             {
@@ -28,7 +28,7 @@ final class MerchCandidateCollectorTest extends TestCase
                 return 'top_products' === $slotKey;
             }
 
-            public function provideCandidates(MerchSurfaceRequestDTO $request, string $slotKey, int $limit = 8): array
+            public function provideCandidates(MerchRequestDTO $request, string $slotKey, int $limit = 8): array
             {
                 return [
                     new MerchCandidateView('producting', 'product', '3', 'three', 'Three', '', 'product', priority: 30),
@@ -49,7 +49,7 @@ final class MerchCandidateCollectorTest extends TestCase
                 return false;
             }
 
-            public function provideCandidates(MerchSurfaceRequestDTO $request, string $slotKey, int $limit = 8): array
+            public function provideCandidates(MerchRequestDTO $request, string $slotKey, int $limit = 8): array
             {
                 throw new \LogicException('Unsupported sources must not be invoked.');
             }
@@ -77,7 +77,7 @@ final class MerchCandidateCollectorTest extends TestCase
                 return true;
             }
 
-            public function provideCandidates(MerchSurfaceRequestDTO $request, string $slotKey, int $limit = 8): array
+            public function provideCandidates(MerchRequestDTO $request, string $slotKey, int $limit = 8): array
             {
                 return [];
             }
@@ -98,7 +98,7 @@ final class MerchCandidateCollectorTest extends TestCase
                 return true;
             }
 
-            public function provideCandidates(MerchSurfaceRequestDTO $request, string $slotKey, int $limit = 8): array
+            public function provideCandidates(MerchRequestDTO $request, string $slotKey, int $limit = 8): array
             {
                 return [];
             }

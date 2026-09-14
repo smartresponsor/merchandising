@@ -1,0 +1,3 @@
+merchandising:
+  resource: '../../src/Controller/MerchController.php'
+  type: attribute

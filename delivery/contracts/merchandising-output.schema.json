@@ -1,13 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "smart-responsor.merchandising.surface.v1",
-  "title": "Merchandising Surface",
+  "$id": "smart-responsor.merchandising.output.v1",
+  "title": "Merchandising Output",
   "type": "object",
-  "required": ["key", "title", "surfaceType", "sections"],
+  "required": ["key", "title", "type", "sections"],
   "properties": {
     "key": {"type": "string"},
     "title": {"type": "string"},
-    "surfaceType": {"type": "string"},
+    "type": {"type": "string"},
     "summary": {"type": ["string", "null"]},
     "sections": {
       "type": "array",

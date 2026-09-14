@@ -13,7 +13,7 @@ Merchandising does not read neighboring component databases directly. Producting
 - Source-specific marker interfaces for category/product/project/vendor/user/advertising candidate sources.
 - `MerchCandidateCollectorInterface` and `MerchCandidateCollector`: collect, filter, sort, and limit candidates from tagged sources.
 - Demo source providers for initial runtime/demo proof without Twig-hardcoding.
-- `MerchSurfaceProvider` now composes sections from source contracts instead of embedding product/category/project/vendor items directly.
+- `MerchProvider` now composes sections from source contracts instead of embedding product/category/project/vendor items directly.
 
 ## Canon
 

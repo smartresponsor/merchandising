@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Merchandising\Service;
 
-use App\Merchandising\DTO\MerchSurfaceRequestDTO;
+use App\Merchandising\DTO\MerchRequestDTO;
 use App\Merchandising\ServiceInterface\MerchCandidateCollectorInterface;
 use App\Merchandising\ServiceInterface\MerchSourceTopologyProviderInterface;
 use App\Merchandising\ServiceInterface\Source\MerchCandidateSourceInterface;
@@ -29,7 +29,7 @@ final readonly class MerchCandidateCollector implements MerchCandidateCollectorI
      *
      * @return list<MerchCandidateView>
      */
-    public function collectForSlot(MerchSurfaceRequestDTO $request, string $slotKey, int $limit = 8): array
+    public function collectForSlot(MerchRequestDTO $request, string $slotKey, int $limit = 8): array
     {
         $candidates = [];
 

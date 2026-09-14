@@ -20,7 +20,7 @@ Merchandising does not own product, category, project, vendor, account, payment,
 
 The canonical output contract is value-object based:
 
-- `MerchSurfaceView`
+- `MerchView`
 - `MerchSectionView`
 - `MerchItemView`
 - `MerchActionView`
@@ -75,8 +75,8 @@ Required flow:
 Neighbor component source contract
 → display-safe MerchCandidateView
 → MerchCandidateCollector
-→ MerchSurfaceProviderInterface
-→ MerchSurfaceView
+→ MerchProviderInterface
+→ MerchView
 → Bridging for Interfacing
 → Interfacing rendering
 ```
@@ -101,7 +101,7 @@ Canonical flow:
 Owner component source implementation
 → MerchCandidateView
 → MerchCandidateCollector
-→ MerchSurfaceView
+→ MerchView
 → UIBridging
 → Interfacing
 ```

@@ -21,9 +21,9 @@ VendoringMerchandisingVendorSource
         ↓ tagged app.merchandising.candidate_source
 MerchCandidateCollector
         ↓
-MerchandisingSurfaceProvider
+MerchProvider
         ↓
-MerchSurfaceView
+MerchView
         ↓
 UIBridging
         ↓

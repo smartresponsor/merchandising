@@ -4,21 +4,21 @@ declare(strict_types=1);
 
 namespace App\Merchandising\Provider;
 
-use App\Merchandising\DTO\MerchSurfaceRequestDTO;
-use App\Merchandising\ProviderInterface\MerchSurfaceProviderInterface;
+use App\Merchandising\DTO\MerchRequestDTO;
+use App\Merchandising\ProviderInterface\MerchProviderInterface;
 use App\Merchandising\ServiceInterface\MerchCandidateCollectorInterface;
 use App\Merchandising\ValueObject\MerchCandidateView;
 use App\Merchandising\ValueObject\MerchItemView;
 use App\Merchandising\ValueObject\MerchSectionView;
-use App\Merchandising\ValueObject\MerchSurfaceView;
+use App\Merchandising\ValueObject\MerchView;
 
 /**
- * Defines the MerchSurfaceProvider contract and behavior within Merchandising.
+ * Defines the MerchProvider contract and behavior within Merchandising.
  */
-final readonly class MerchSurfaceProvider implements MerchSurfaceProviderInterface
+final readonly class MerchProvider implements MerchProviderInterface
 {
     /**
-     * Initializes the MerchSurfaceProvider.
+     * Initializes the MerchProvider.
      */
     public function __construct(
         private MerchCandidateCollectorInterface $candidateCollector,
@@ -28,16 +28,16 @@ final readonly class MerchSurfaceProvider implements MerchSurfaceProviderInterfa
     /**
      * Builds a merchandising surface from registered candidate sources.
      */
-    public function provideSurface(string $surfaceKey, MerchSurfaceRequestDTO $request): MerchSurfaceView
+    public function provide(string $merchKey, MerchRequestDTO $request): MerchView
     {
-        if ('home' !== $surfaceKey) {
-            throw new \InvalidArgumentException(sprintf('Unsupported merchandising surface "%s".', $surfaceKey));
+        if ('home' !== $merchKey) {
+            throw new \InvalidArgumentException(sprintf('Unsupported merchandising surface "%s".', $merchKey));
         }
 
-        return new MerchSurfaceView(
-            key: $surfaceKey,
+        return new MerchView(
+            key: $merchKey,
             title: 'Storefront home',
-            surfaceType: 'storefront_home',
+            type: 'storefront_home',
             summary: 'Storefront composition assembled from owner-provided merchandising candidates.',
             sections: [
                 $this->section($request, 'hero', 'Smart storefront', 'hero', 10, 'Primary storefront attention slot for campaigns, discovery, and conversion.'),
@@ -50,7 +50,7 @@ final readonly class MerchSurfaceProvider implements MerchSurfaceProviderInterfa
             actions: [],
             metadata: [
                 'component' => 'merchandising',
-                'contract' => 'merchandising.surface.v1',
+                'contract' => 'merchandising.output.v1',
                 'candidateFlow' => 'neighbor-source-contracts',
                 'directNeighborDatabaseReads' => 'forbidden',
                 'renderTarget' => 'interfacing',
@@ -62,7 +62,7 @@ final readonly class MerchSurfaceProvider implements MerchSurfaceProviderInterfa
      * Builds one merchandising section for the requested slot.
      */
     private function section(
-        MerchSurfaceRequestDTO $request,
+        MerchRequestDTO $request,
         string $slotKey,
         string $title,
         string $type,

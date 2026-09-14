@@ -19,7 +19,7 @@ contracts:
     - App\\Merchandising\\ServiceInterface\\Source\\MerchCandidateSourceInterface
     - App\\Merchandising\\ServiceInterface\\MerchCandidateCollectorInterface
   output:
-    - App\\Merchandising\\Value\\MerchSurfaceView
+    - App\\Merchandising\\Value\\MerchView
     - App\\Merchandising\\Value\\MerchSectionView
     - App\\Merchandising\\Value\\MerchItemView
     - App\\Merchandising\\Value\\MerchActionView

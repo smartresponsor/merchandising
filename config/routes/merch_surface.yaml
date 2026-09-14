@@ -1,3 +1,0 @@
-merchandising_surface:
-  resource: '../../src/Controller/MerchSurfaceController.php'
-  type: attribute

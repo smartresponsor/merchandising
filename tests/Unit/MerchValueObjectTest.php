@@ -8,12 +8,12 @@ use App\Merchandising\ValueObject\MerchActionView;
 use App\Merchandising\ValueObject\MerchCandidateView;
 use App\Merchandising\ValueObject\MerchSectionView;
 use App\Merchandising\ValueObject\MerchSourceContractView;
-use App\Merchandising\ValueObject\MerchSurfaceView;
+use App\Merchandising\ValueObject\MerchView;
 use PHPUnit\Framework\TestCase;
 
 final class MerchValueObjectTest extends TestCase
 {
-    public function testCandidateAndSurfaceSerializationPreserveContractData(): void
+    public function testCandidateAndCompositionSerializationPreserveContractData(): void
     {
         $action = new MerchActionView('Open', '/item/1');
         $candidate = new MerchCandidateView(
@@ -55,20 +55,20 @@ final class MerchValueObjectTest extends TestCase
             actions: [$action],
             metadata: ['slot' => 'featured'],
         );
-        $surface = new MerchSurfaceView(
+        $merch = new MerchView(
             key: 'home',
             title: 'Home',
-            surfaceType: 'storefront_home',
+            type: 'storefront_home',
             sections: [$section],
             actions: [$action],
-            metadata: ['contract' => 'merchandising.surface.v1'],
+            metadata: ['contract' => 'merchandising.output.v1'],
         );
 
-        $surfaceArray = $surface->toArray();
-        self::assertSame('home', $surfaceArray['key']);
-        self::assertSame('featured', $surfaceArray['sections'][0]['key']);
-        self::assertSame('product-1', $surfaceArray['sections'][0]['items'][0]['key']);
-        self::assertSame('/item/1', $surfaceArray['actions'][0]['href']);
+        $merchArray = $merch->toArray();
+        self::assertSame('home', $merchArray['key']);
+        self::assertSame('featured', $merchArray['sections'][0]['key']);
+        self::assertSame('product-1', $merchArray['sections'][0]['items'][0]['key']);
+        self::assertSame('/item/1', $merchArray['actions'][0]['href']);
     }
 
     public function testSourceContractSerializationIsStable(): void

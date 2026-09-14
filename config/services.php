@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-use App\Merchandising\Controller\MerchSurfaceController;
+use App\Merchandising\Controller\MerchController;
 use App\Merchandising\Service\MerchCandidateCollector;
 use App\Merchandising\Provider\MerchInterfacingPayloadProvider;
-use App\Merchandising\Provider\MerchSurfaceProvider;
+use App\Merchandising\Provider\MerchProvider;
 use App\Merchandising\ServiceInterface\MerchCandidateCollectorInterface;
 use App\Merchandising\ProviderInterface\MerchInterfacingPayloadProviderInterface;
-use App\Merchandising\ProviderInterface\MerchSurfaceProviderInterface;
+use App\Merchandising\ProviderInterface\MerchProviderInterface;
 use App\Merchandising\ServiceInterface\MerchSourceTopologyProviderInterface;
 use App\Merchandising\ServiceInterface\Source\MerchCandidateSourceInterface;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
@@ -32,12 +32,12 @@ return static function (ContainerConfigurator $container): void {
     $services->alias(MerchCandidateCollectorInterface::class, MerchCandidateCollector::class);
     $services->alias(MerchSourceTopologyProviderInterface::class, MerchCandidateCollector::class);
 
-    $services->set(MerchSurfaceProvider::class);
-    $services->alias(MerchSurfaceProviderInterface::class, MerchSurfaceProvider::class);
+    $services->set(MerchProvider::class);
+    $services->alias(MerchProviderInterface::class, MerchProvider::class);
 
     $services->set(MerchInterfacingPayloadProvider::class);
     $services->alias(MerchInterfacingPayloadProviderInterface::class, MerchInterfacingPayloadProvider::class);
 
-    $services->set(MerchSurfaceController::class)
+    $services->set(MerchController::class)
         ->tag('controller.service_arguments');
 };

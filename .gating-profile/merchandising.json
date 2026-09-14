@@ -8,15 +8,10 @@
     "database_prefix": "merch_",
     "forbidden_legacy_tokens": [
       "App\\Merchandising\\\u0056alue\\",
-      "MerchandisingSurface\u0043ontroller",
-      "MerchandisingCandidate\u0043ollector",
-      "MerchandisingDemoSurface\u0050rovider",
-      "MerchandisingSurfaceProvider\u0049nterface"
+      "MerchandisingCandidate\u0043ollector"
     ],
     "stale_documentation_tokens": [
-      "MerchandisingCandidateView",
-      "MerchandisingSurfaceView",
-      "MerchandisingDemoSurface\u0050rovider"
+      "MerchandisingCandidateView"
     ],
     "enabled_rules": [
       "canon.000.component_prefix",
