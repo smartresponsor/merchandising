@@ -198,3 +198,14 @@
 - Inspect final Git diff/status and ensure only Merchandising-owned target files from this pass are committed.
 - Do not stage or commit the pre-existing `.gating` modifications/deletion.
 - Re-run post-commit package quality and inspect branch/upstream state. Canon remains externally blocked until the Gating profile is restored by its owning change.
+
+### Post-integration acceptance result
+
+- Signed implementation commit: `9d7ee5f` (`fix: enforce dev-master component policy`). The commit contains only `composer.json`, `tests/Architecture/MerchArchitectureTest.php`, and this orchestration journal; pre-existing `.gating/**` changes were not staged.
+- Post-commit `composer quality`: green — PHPStan 0 errors, PHPUnit 12/12 with 80 assertions, PHP-CS-Fixer clean.
+- Fresh path coverage execution: classes 76.47%, methods 90.74%, paths 84.75%, branches 100.00%, lines 90.62%. Canon040 line/method/branch thresholds remain satisfied.
+- Target PHP syntax check for the changed architecture test: green.
+- Doctrine migration-currentness remains externally blocked exactly as before: PostgreSQL `127.0.0.1:5432` rejects the `app` connection because no password is supplied. No credential was invented or committed.
+- Git HEAD is `9d7ee5fe3ba3a5a694f4b8995a05f05cf2dbaa05` on local `master`. There is no upstream and no configured `origin`, so push/PR publication is unavailable.
+- The only remaining working-tree dirt is the pre-existing external `.gating/**` change set. The deleted Merchandising Gating profile continues to prevent `composer canon:check` from evaluating rules; this is an external tooling integration blocker, not an unresolved target-code failure.
+- Under the current capability and ownership boundary, no further safe Merchandising-owned RC-critical implementation tail remains. Growth work remains intentionally post-RC.
