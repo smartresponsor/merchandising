@@ -1,14 +1,13 @@
+parameters:
+  merch_data_database_url_default: 'postgresql://localhost/merchandising?serverVersion=16&charset=utf8'
+
 doctrine:
   dbal:
     default_connection: data
     connections:
       data:
         driver: pdo_pgsql
-        host: 127.0.0.1
-        port: 5432
-        dbname: merchandising
-        user: app
-        password: ''
+        url: '%env(default:merch_data_database_url_default:MERCH_DATA_DATABASE_URL)%'
         server_version: '16'
       infra:
         driver: pdo_sqlite
