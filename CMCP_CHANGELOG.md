@@ -139,3 +139,15 @@
 - Commit the confirmed nested-noise cleanup and this journal update.
 - Re-run post-integration quality, Canon/Gating, standalone runtime, coverage freshness, Doctrine mapping, and worktree/HEAD checks.
 - Acceptance may close with one environment blocker only: actual PostgreSQL migration-currentness cannot be executed until valid local database credentials or an isolated disposable PostgreSQL instance are available.
+
+### Iteration 5 — final acceptance result
+
+- Post-integration `composer quality`: green — PHPStan 0 errors, PHPUnit 12/12 with 58 assertions, CS dry-run clean.
+- Post-integration `composer canon:check`: green — 41 rules, 0 failed, 0 warning, 3 profile-conditional skips (Canon008/009/012) with applicability decisions recorded above.
+- Post-integration standalone runtime: green on Symfony 8.1.6 / PHP 8.4.13 with `App\\Merchandising\\Kernel`.
+- Post-integration Doctrine mapping validation: green.
+- Fresh canonical coverage remains lines 90.6%, methods 90.7%, branches 100%; PHPDoc coverage remains classes 100%, methods 85.5%.
+- `doctrine:migrations:up-to-date` was re-run and remains externally blocked by PostgreSQL authentication (`fe_sendauth: no password supplied`) for local user `app` on `127.0.0.1:5432`.
+- Git remote inspection confirms there is no configured `origin`; publication/PR is therefore unavailable rather than pending.
+- Signed integration commits: `570471d` (`feat: harden Merchandising for RC`) and `dd6ee8c` (`chore: finalize Merchandising RC integration`).
+- RC implementation is accepted with the explicitly bounded external PostgreSQL credential blocker; no authorized in-scope code, packaging, test, canon, documentation, or Git-hygiene repair remains.
