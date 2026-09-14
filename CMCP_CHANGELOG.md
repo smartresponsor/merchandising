@@ -229,3 +229,12 @@
 - Git HEAD is `9d7ee5fe3ba3a5a694f4b8995a05f05cf2dbaa05` on local `master`. There is no upstream and no configured `origin`, so push/PR publication is unavailable.
 - The only remaining working-tree dirt is the pre-existing external `.gating/**` change set. The deleted Merchandising Gating profile continues to prevent `composer canon:check` from evaluating rules; this is an external tooling integration blocker, not an unresolved target-code failure.
 - Under the current capability and ownership boundary, no further safe Merchandising-owned RC-critical implementation tail remains. Growth work remains intentionally post-RC.
+
+### PostgreSQL credential re-check — 2026-09-14
+
+- Re-checked the user-provided `www/App` credential source against the current Console runtime. Console PostgreSQL diagnostics resolve a working redacted `DATABASE_URL` and connect successfully to local PostgreSQL 16.4 database `app`.
+- Direct child PHP/PowerShell processes do not receive that resolved password; `App/tools/resolve-database-url.php` currently yields an empty password outside the Console workspace-secret resolver. Repeated Doctrine migration attempts therefore fail truthfully with `fe_sendauth: no password supplied` before any Merchandising schema mutation.
+- Confirmed the shared `app` database currently contains no `merch_*` tables and no `merch_migration_versions` table, so Merchandising migrations are not yet applied there.
+- Replaced the hardcoded blank-password Doctrine connection with a secret-free `MERCH_DATA_DATABASE_URL` runtime override and local fallback URL. No credential is persisted or logged.
+- Retained `bin/merch-db-bootstrap.ps1` only as an explicit process-env consumer; it no longer attempts to cross the Console workspace-secret boundary. Added `/.console-mcp/` to `.gitignore` for bounded-run artifacts.
+- Current remaining blocker is capability-level credential injection into the Merchandising Doctrine process, not missing credentials in App and not a target-code defect.

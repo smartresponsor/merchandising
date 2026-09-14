@@ -1,5 +1,6 @@
 /vendor/
 /.codebase-memory/
+/.console-mcp/
 /.gating/.idea/
 /.gating/.commanding/log/
 /var/
