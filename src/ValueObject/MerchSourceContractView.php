@@ -29,6 +29,8 @@ final readonly class MerchSourceContractView
     }
 
     /**
+     * Serializes the direct-neighbor source contract for diagnostics, manifests, and agent-readable topology.
+     *
      * @return array<string, mixed>
      */
     public function toArray(): array

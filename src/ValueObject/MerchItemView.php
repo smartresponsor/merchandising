@@ -32,6 +32,8 @@ final readonly class MerchItemView
     }
 
     /**
+     * Serializes one composed merchandising item into the renderer-neutral downstream presentation contract.
+     *
      * @return array<string, mixed>
      */
     public function toArray(): array

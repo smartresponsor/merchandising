@@ -160,6 +160,18 @@
 - The one-off bridge helper was moved to ignored `var/` after execution and is not product tooling.
 - RC implementation and verification are now fully green within the local environment; the only remaining publication limitation is the absence of a configured Git remote (`originConfigured=false`).
 
+### Embedded Gating sync ownership closure
+
+- Investigated the later dirty `.gating` state instead of reverting it. The embedded tree is a normal directory, not a junction or symlink.
+- The changed Gating registry/rules/calibration files and new Canon043-045 implementations were compared by SHA-256 against the clean canonical `www/Gating` repository; all 9 observed code files matched byte-for-byte.
+- Root cause: canonical Gating sync legitimately refreshed the embedded tool copy, while the previously added Merchandising-specific profile incorrectly lived inside that synchronized tree and was therefore deleted by sync.
+- Moved Merchandising profile ownership to `.gating-profile/merchandising.json` and updated `composer canon:check` to reference the target-owned profile while continuing to use the embedded Gating runtime/policy root.
+- The JSON profile keeps exact decoded migration/stale-documentation tokens without self-triggering Canon010 raw-content scanning.
+- Enabled the newly current Canon043, Canon044, and Canon045 rules. All three pass: local first-party dependencies use exact `dev-master`, Objecting persisted names are entity-native, and the complete reachable local Composer repository closure is exposed.
+- New Canon031 semantics exclude trivial/internal accessors from the denominator; added meaningful descriptions to the 9 real public contract methods previously carrying tags-only PHPDoc. Result: 31/31 classes and 22/22 contract methods documented (100%).
+- Fresh coverage remains 90.6% lines, 90.7% methods, and 100% branches; PHPUnit now reports 12 tests / 80 assertions.
+- Current Gating result: 44 rules, 0 failed, 0 warning, 3 justified profile-conditional skips (Canon008/009/012).
+
 ## RC continuation — Canon043/045 development Composer policy — 2026-09-14
 
 ### Reconnaissance and canon mapping

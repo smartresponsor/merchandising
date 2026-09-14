@@ -22,6 +22,8 @@ final readonly class MerchInterfacingPayloadProvider implements MerchInterfacing
     }
 
     /**
+     * Builds the renderer-neutral payload consumed by the Interfacing presentation boundary.
+     *
      * @return array<string, mixed>
      */
     public function provideInterfacingPayload(string $surfaceKey, MerchSurfaceRequestDTO $request): array

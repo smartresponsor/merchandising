@@ -26,6 +26,8 @@ final readonly class MerchSurfaceView
     }
 
     /**
+     * Serializes the complete merchandising surface into the renderer-neutral contract consumed downstream.
+     *
      * @return array<string, mixed>
      */
     public function toArray(): array

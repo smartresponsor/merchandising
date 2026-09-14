@@ -29,6 +29,8 @@ interface MerchCandidateSourceInterface
     public function supportsSlot(string $slotKey): bool;
 
     /**
+     * Provides source-owned, display-safe candidates for the requested merchandising slot and request context.
+     *
      * @return list<MerchCandidateView>
      */
     public function provideCandidates(MerchSurfaceRequestDTO $request, string $slotKey, int $limit = 8): array;

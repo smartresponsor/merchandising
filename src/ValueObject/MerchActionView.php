@@ -20,6 +20,8 @@ final readonly class MerchActionView
     }
 
     /**
+     * Serializes the action into the stable renderer-neutral action contract used by downstream presentation layers.
+     *
      * @return array{label:string,href:string,kind:string}
      */
     public function toArray(): array

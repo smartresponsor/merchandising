@@ -45,7 +45,7 @@
   },
   "scripts": {
     "runtime:about": "php bin/console about",
-    "canon:check": "php .gating/bin/gating check --target=. --profile=.gating/.gating/profile/component/merchandising.yaml --policy-root=.gating/.gating --severity-config=.gating/.gating/config/severity.yaml",
+    "canon:check": "php .gating/bin/gating check --target=. --profile=.gating-profile/merchandising.json --policy-root=.gating/.gating --severity-config=.gating/.gating/config/severity.yaml",
     "quality:doctrine:schema": "php bin/console doctrine:schema:validate --skip-sync --no-interaction",
     "quality:doctrine:migrations": "php bin/console doctrine:migrations:up-to-date --no-interaction",
     "quality:doctrine": ["@quality:doctrine:schema", "@quality:doctrine:migrations"],

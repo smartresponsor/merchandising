@@ -27,6 +27,8 @@ final readonly class MerchSectionView
     }
 
     /**
+     * Serializes a composed merchandising section with ordered items, actions, and presentation metadata.
+     *
      * @return array<string, mixed>
      */
     public function toArray(): array

@@ -25,6 +25,8 @@ final readonly class MerchCandidateCollector implements MerchCandidateCollectorI
     }
 
     /**
+     * Collects display-safe candidates for one slot, orders them by merchandising priority, and enforces the requested limit.
+     *
      * @return list<MerchCandidateView>
      */
     public function collectForSlot(MerchSurfaceRequestDTO $request, string $slotKey, int $limit = 8): array

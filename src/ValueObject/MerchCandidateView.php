@@ -68,6 +68,8 @@ final readonly class MerchCandidateView
     }
 
     /**
+     * Serializes the source-owned candidate into the stable merchandising contract without exposing source entities.
+     *
      * @return array<string, mixed>
      */
     public function toArray(): array
