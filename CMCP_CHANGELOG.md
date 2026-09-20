@@ -249,3 +249,54 @@
 - Renamed the primary persistence table to `merch_composition` with `merch_key` and `type`, preserving the required `merch_` database prefix without reintroducing `Surface`.
 - Updated target-owned Gating profile to remove obsolete Surface-bearing legacy/stale names while keeping the current `Merch` subject vocabulary authoritative.
 - Verification: `composer quality` green (PHPStan 0 errors, PHPUnit 12/12 with 80 assertions, CS clean); fresh coverage green at 90.6% lines, 90.7% methods, 100% branches; `composer canon:check` green with 44 rules, 0 failed, 0 warning, 3 justified profile-conditional skips; standalone Symfony 8.1.6 / PHP 8.4.13 boot green; Doctrine mapping green.
+
+## RC continuation — deterministic candidate aggregation — 2026-09-20
+
+### Baseline and selected work
+
+- Re-read current repository governance, Composer/runtime configuration, all architecture notes, source/output contracts, persistence baseline, candidate collector/provider, tests, and the active Gating profile.
+- Verified clean Git `master` baseline at `b0ce6f361a2550d74c75cfb9cda45b3693aaf924`; no upstream is configured.
+- Re-read mandatory Objecting, Cruding, Viewing, and Interfacing contracts, plus Gating executable ownership and the relevant Canonization normative rules.
+- Market/maturity comparison keeps scheduled rules, pin/boost/bury/hide, intelligent ranking, experimentation, and analytics in the separate growth stream; RC work remains correctness-oriented.
+- Selected RC gap: `MerchCandidateCollector` accepted non-positive limits, which could expose PHP negative-slice behavior, while overlapping registrations could also produce duplicate source identities and registration-order-sensitive ties.
+
+### Canonization mapping
+
+- Canon008: no new foreign namespace/package edge.
+- Canon011: source exceptions remain observable; no blanket catch or success-like fallback is introduced.
+- Canon012: request and candidate boundaries remain typed DTO/value-object contracts.
+- Canon017: architecture documentation is updated to match the aggregation runtime guarantees.
+- Canon018/020: `App\\Merchandising\\`, `Merch*`, and role-first placement remain unchanged.
+- Canon021: no generic CRUD machinery is introduced.
+- Canon022/023/024/025: standalone dependency baseline, development symlinks, packaged production dependencies, and dual-runtime surfaces remain unchanged.
+- Canon039/040: PHPUnit and persistent coverage remain executable acceptance evidence.
+- Canon043/045: current `dev-master` sibling identity and root local repository closure remain unchanged.
+
+### Material implementation
+
+- Reject non-positive candidate limits before source invocation.
+- Deduplicate display-safe candidates by `sourceComponent + sourceType + sourceId`.
+- For duplicate source identities, retain the strongest-priority candidate using a deterministic comparison.
+- Sort equal-priority output by stable source identity and candidate key instead of Symfony service registration order.
+- Added unit regression coverage and documented the aggregation guarantees.
+
+### Material risks and gates
+
+- Ordering changes only for equal-priority candidates or duplicate owner identities; this is intentional deterministic behavior.
+- Source failures remain fail-fast under Canon011; fallback/observability policy is a separate design concern.
+- The pre-existing strict Composer advisory for the root `version` field is tracked separately from runtime correctness.
+- Gates: changed-file PHP lint, PHPUnit, PHPStan, PHP-CS-Fixer dry run, fresh coverage, Gating/Canonization, Composer validation/check-lock, standalone runtime, Doctrine mapping, and migration-currentness.
+
+### Verification result
+
+- Changed-file PHP lint: green for collector and regression test.
+- `composer quality`: green — PHPStan 0 errors, PHPUnit 14/14 with 85 assertions, PHP-CS-Fixer dry-run clean.
+- Fresh path coverage: lines 91.3%, methods 91.1%, branches 100.0%; all Canon040 thresholds are satisfied.
+- `composer canon:check`: green — 44 rules, 0 failed, 0 warning, 3 profile-conditional skips (Canon008/009/012), unchanged from baseline applicability.
+- Standalone runtime: green — Symfony 8.1.6 / PHP 8.4.13 with `App\\Merchandising\\Kernel`.
+- Doctrine mapping: green. Migration-currentness is environment-blocked before any schema work because local PostgreSQL rejects the process with `fe_sendauth: no password supplied`.
+- Normal Composer validate/check-lock: green. Strict validation reports only the pre-existing advisory that a root `version` field is present.
+- Diff ownership: exactly four Merchandising-owned files are dirty; no unrelated or helper-repository mutation is present.
+- Git remote inspection: no `origin` is configured, so publication/PR is unavailable in this workspace after local integration.
+
+

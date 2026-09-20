@@ -31,7 +31,12 @@ final readonly class MerchCandidateCollector implements MerchCandidateCollectorI
      */
     public function collectForSlot(MerchRequestDTO $request, string $slotKey, int $limit = 8): array
     {
-        $candidates = [];
+        if ($limit < 1) {
+            throw new \InvalidArgumentException('Merchandising candidate limit must be greater than zero.');
+        }
+
+        /** @var array<string, MerchCandidateView> $candidatesByIdentity */
+        $candidatesByIdentity = [];
 
         foreach ($this->sources as $source) {
             if (!$source->supportsSlot($slotKey)) {
@@ -39,18 +44,51 @@ final readonly class MerchCandidateCollector implements MerchCandidateCollectorI
             }
 
             foreach ($source->provideCandidates($request, $slotKey, $limit) as $candidate) {
-                if ($candidate->displaySafe) {
-                    $candidates[] = $candidate;
+                if (!$candidate->displaySafe) {
+                    continue;
+                }
+
+                $identity = self::candidateIdentity($candidate);
+                $current = $candidatesByIdentity[$identity] ?? null;
+
+                if (null === $current || self::compareCandidates($candidate, $current) < 0) {
+                    $candidatesByIdentity[$identity] = $candidate;
                 }
             }
         }
 
-        usort(
-            $candidates,
-            static fn (MerchCandidateView $left, MerchCandidateView $right): int => $left->priority <=> $right->priority,
-        );
+        $candidates = array_values($candidatesByIdentity);
+        usort($candidates, self::compareCandidates(...));
 
         return array_slice($candidates, 0, $limit);
+    }
+
+    /**
+     * Returns the source-owned identity used to suppress duplicate candidates supplied through overlapping registrations.
+     */
+    private static function candidateIdentity(MerchCandidateView $candidate): string
+    {
+        return $candidate->sourceComponent . "\\0" . $candidate->sourceType . "\\0" . $candidate->sourceId;
+    }
+
+    /**
+     * Orders candidates by business priority and stable source identity so output does not depend on service registration order.
+     */
+    private static function compareCandidates(MerchCandidateView $left, MerchCandidateView $right): int
+    {
+        return [
+            $left->priority,
+            $left->sourceComponent,
+            $left->sourceType,
+            $left->sourceId,
+            $left->key,
+        ] <=> [
+            $right->priority,
+            $right->sourceComponent,
+            $right->sourceType,
+            $right->sourceId,
+            $right->key,
+        ];
     }
 
     /**

@@ -109,4 +109,66 @@ final class MerchCandidateCollectorTest extends TestCase
         self::assertCount(1, $contracts);
         self::assertSame('catalog', $contracts[0]->sourceKey);
     }
+
+    public function testCollectorRejectsNonPositiveLimit(): void
+    {
+        $collector = new MerchCandidateCollector([]);
+
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage('Merchandising candidate limit must be greater than zero.');
+
+        $collector->collectForSlot(new MerchRequestDTO(), 'top_products', 0);
+    }
+
+    public function testCollectorDeduplicatesOwnerIdentityAndUsesDeterministicOrdering(): void
+    {
+        $first = new class () implements MerchCandidateSourceInterface {
+            public function sourceKey(): string
+            {
+                return 'first';
+            }
+
+            public function supportsSlot(string $slotKey): bool
+            {
+                return true;
+            }
+
+            public function provideCandidates(MerchRequestDTO $request, string $slotKey, int $limit = 8): array
+            {
+                return [
+                    new MerchCandidateView('producting', 'product', '2', 'z-key', 'Second', '', 'product', priority: 10),
+                    new MerchCandidateView('producting', 'product', '1', 'old-key', 'Duplicate old', '', 'product', priority: 30),
+                ];
+            }
+        };
+        $second = new class () implements MerchCandidateSourceInterface {
+            public function sourceKey(): string
+            {
+                return 'second';
+            }
+
+            public function supportsSlot(string $slotKey): bool
+            {
+                return true;
+            }
+
+            public function provideCandidates(MerchRequestDTO $request, string $slotKey, int $limit = 8): array
+            {
+                return [
+                    new MerchCandidateView('producting', 'product', '1', 'best-key', 'Duplicate best', '', 'product', priority: 5),
+                    new MerchCandidateView('cataloging', 'category', '1', 'a-key', 'First', '', 'category', priority: 10),
+                ];
+            }
+        };
+
+        $result = (new MerchCandidateCollector([$first, $second]))
+            ->collectForSlot(new MerchRequestDTO(), 'top_products', 8);
+
+        self::assertCount(3, $result);
+        self::assertSame(['best-key', 'a-key', 'z-key'], array_map(
+            static fn (MerchCandidateView $candidate): string => $candidate->key,
+            $result,
+        ));
+        self::assertSame('Duplicate best', $result[0]->title);
+    }
 }
