@@ -321,4 +321,15 @@
 - Final quality: PHPStan clean; PHPUnit 15/15 with 87 assertions; PHP-CS-Fixer clean; Playwright 1/1; behavioral evidence generated; Gating 68 rules, 0 failed, 0 warning.
 - Final `composer validate --strict --check-lock`: PASS after lock content-hash synchronization with 0 package updates.
 
+## 2026-09-22 — Current RC verification refresh
+
+- Re-read current governance, Composer/runtime configuration, architecture/source/output contracts, dependency contour, Canonization/Gating constraints, and clean Git baseline.
+- Current RC diagnostic: GREEN with 0 canon issues.
+- Market contour remains bounded to deterministic storefront composition, placement/order, source-backed candidates, and stable renderer-neutral output; merchant experimentation/personalization/ranking analytics remain growth.
+- `composer quality`: PASS; PHPStan clean, PHPUnit 15/15 with 87 assertions, CS clean, Playwright 1/1, behavioral evidence generated, Gating 68 rules with 0 failed / 0 warning.
+- Fresh coverage: lines 96.3%, methods 94.6%, branches 88.4%; Canon040 passes.
+- Standalone Symfony runtime and Doctrine mapping validation: PASS.
+- `doctrine:migrations:up-to-date`: environment-blocked only because the current process has no PostgreSQL password for 127.0.0.1:5432; no target defect is reported and no credential is invented or persisted.
+- No Merchandising source change is justified by this pass.
+
 
