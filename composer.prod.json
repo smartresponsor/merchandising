@@ -38,5 +38,15 @@
     },
     "sort-packages": true
   },
-  "version": "0.1.0-dev"
+  "version": "0.1.0-dev",
+  "require-dev": {
+    "gating/gate": "dev-master"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/smartresponsor/gating.git",
+      "no-api": true
+    }
+  ]
 }

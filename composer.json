@@ -31,7 +31,10 @@
     "phpstan/phpstan-doctrine": "^2.0",
     "phpunit/phpunit": "^12.0",
     "friendsofphp/php-cs-fixer": "^3.65",
-    "symfony/phpunit-bridge": "^8.1"
+    "symfony/phpunit-bridge": "^8.1",
+    "symfony/test-pack": "^1.2",
+    "symfony/panther": "^2.4",
+    "gating/gate": "dev-master"
   },
   "autoload": {
     "psr-4": {
@@ -45,24 +48,36 @@
   },
   "scripts": {
     "runtime:about": "php bin/console about",
-    "canon:check": "php .gating/bin/gating check --target=. --profile=.gating-profile/merchandising.json --policy-root=.gating/.gating --severity-config=.gating/.gating/config/severity.yaml",
+    "canon:check": "@gate",
     "quality:doctrine:schema": "php bin/console doctrine:schema:validate --skip-sync --no-interaction",
     "quality:doctrine:migrations": "php bin/console doctrine:migrations:up-to-date --no-interaction",
-    "quality:doctrine": ["@quality:doctrine:schema", "@quality:doctrine:migrations"],
+    "quality:doctrine": [
+      "@quality:doctrine:schema",
+      "@quality:doctrine:migrations"
+    ],
     "quality:phpstan": "phpstan analyse --memory-limit=1G",
     "quality:phpunit": "phpunit -c phpunit.xml.dist",
-    "quality:phpunit:coverage": ["@php -r \"if (!is_dir('var/coverage')) { mkdir('var/coverage', 0777, true); }\"", "@php -d xdebug.mode=coverage vendor/bin/phpunit -c phpunit.xml.dist --path-coverage --coverage-text=var/coverage/summary.txt"],
+    "quality:phpunit:coverage": [
+      "@php -r \"if (!is_dir('var/coverage')) { mkdir('var/coverage', 0777, true); }\"",
+      "@php -d xdebug.mode=coverage vendor/bin/phpunit -c phpunit.xml.dist --path-coverage --coverage-text=var/coverage/summary.txt"
+    ],
     "quality:cs:dry": "php-cs-fixer fix --dry-run --diff --config=.php-cs-fixer.php",
     "quality:cs:fix": "php-cs-fixer fix --config=.php-cs-fixer.php",
+    "quality:ui": "npm test",
+    "test:behavioral-coverage": "@php tool/behavioral-coverage.php",
     "quality": [
       "@quality:phpstan",
       "@quality:phpunit",
-      "@quality:cs:dry"
+      "@quality:cs:dry",
+      "@quality:ui",
+      "@test:behavioral-coverage",
+      "@gate"
     ],
     "quality:po": "@quality",
     "quality:post": "@quality",
     "quality:post-seal-owner-handoff-index": "@quality",
-    "quality:rc-owner-review-final-seal": "@quality"
+    "quality:rc-owner-review-final-seal": "@quality",
+    "gate": "@php vendor/bin/gating check --target=. --profile=config/merch_gating_profile.json"
   },
   "config": {
     "allow-plugins": {
@@ -77,7 +92,9 @@
       "url": "../Collectioning",
       "options": {
         "symlink": true,
-        "versions": {"collectioning/collection": "dev-master"}
+        "versions": {
+          "collectioning/collection": "dev-master"
+        }
       }
     },
     {
@@ -85,7 +102,9 @@
       "url": "../Tabling",
       "options": {
         "symlink": true,
-        "versions": {"tabling/table": "dev-master"}
+        "versions": {
+          "tabling/table": "dev-master"
+        }
       }
     },
     {
@@ -93,7 +112,9 @@
       "url": "../Cruding",
       "options": {
         "symlink": true,
-        "versions": {"cruding/crud": "dev-master"}
+        "versions": {
+          "cruding/crud": "dev-master"
+        }
       }
     },
     {
@@ -101,7 +122,9 @@
       "url": "../Interfacing",
       "options": {
         "symlink": true,
-        "versions": {"interfacing/interface": "dev-master"}
+        "versions": {
+          "interfacing/interface": "dev-master"
+        }
       }
     },
     {
@@ -109,7 +132,9 @@
       "url": "../Objecting",
       "options": {
         "symlink": true,
-        "versions": {"objecting/object": "dev-master"}
+        "versions": {
+          "objecting/object": "dev-master"
+        }
       }
     },
     {
@@ -117,7 +142,19 @@
       "url": "../Viewing",
       "options": {
         "symlink": true,
-        "versions": {"viewing/view": "dev-master"}
+        "versions": {
+          "viewing/view": "dev-master"
+        }
+      }
+    },
+    {
+      "type": "path",
+      "url": "../Gating",
+      "options": {
+        "symlink": true,
+        "versions": {
+          "gating/gate": "dev-master"
+        }
       }
     }
   ],

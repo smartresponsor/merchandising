@@ -1,0 +1,24 @@
+{
+  "component": {
+    "name": "Merchandising",
+    "nameEntity": "merch",
+    "namespace": "App\\Merchandising",
+    "business_prefix": "Merch",
+    "subject_prefix": "Merch",
+    "subject_tokens": ["Merch"],
+    "database_prefix": "merch_",
+    "forbidden_legacy_tokens": [
+      "App\\Merchandising\\\u0056alue\\",
+      "MerchandisingCandidate\u0043ollector"
+    ],
+    "stale_documentation_tokens": [
+      "MerchandisingCandidateView"
+    ],
+    "route_owner_root": "merchandising",
+    "route_owner_roots": ["merchandising"],
+    "mutation_mode": "guarded",
+    "secret_scan": "enabled",
+    "docblock_preservation": "enabled",
+    "release": {"evidence_required": false}
+  }
+}

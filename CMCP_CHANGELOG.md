@@ -299,4 +299,15 @@
 - Diff ownership: exactly four Merchandising-owned files are dirty; no unrelated or helper-repository mutation is present.
 - Git remote inspection: no `origin` is configured, so publication/PR is unavailable in this workspace after local integration.
 
+## 2026-09-22 — Composer Gating migration and behavioral acceptance
+
+- Removed the embedded Gating runtime/policy tree from consumer `.gating/`; `.gating/` is now artifact-only with a repository marker README.
+- Moved repository-specific Gating profile ownership into `config/merch_gating_profile.json` and switched `composer canon:check` / `gate` to the Composer-installed `vendor/bin/gating` runtime.
+- Updated the consumer to current Gating `dev-master` with Canon052 integration and owner-side generic guard alignment.
+- Completed Canon041 tooling with Symfony Test Pack, Panther, repository-local Playwright config, and a real HTTP smoke test.
+- Added a canonical standalone `public/index.php`; corrected HTTP bootstrap to honor process-level `APP_ENV` / `APP_DEBUG`, eliminating the web/CLI container divergence found by Playwright.
+- Added Symfony functional HTTP coverage and a reproducible Canon042 evidence producer based on explicit repository-owned test inventories.
+- Aggregate `composer quality`: GREEN. PHPStan 0 errors; PHPUnit 15/15 with 87 assertions; PHP-CS-Fixer clean; Playwright 1/1; Canon040/041/042/052 pass; Gating 68 rules, 0 failed, 0 warning.
+- Generated `config/reference.php` remains local and intentionally untracked under Canon037.
+
 

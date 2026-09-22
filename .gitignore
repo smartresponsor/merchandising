@@ -1,4 +1,7 @@
 /vendor/
+/node_modules/
+/test-results/
+/playwright-report/
 /.codebase-memory/
 /.console-mcp/
 /.gating/.idea/
