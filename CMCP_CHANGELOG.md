@@ -310,4 +310,15 @@
 - Aggregate `composer quality`: GREEN. PHPStan 0 errors; PHPUnit 15/15 with 87 assertions; PHP-CS-Fixer clean; Playwright 1/1; Canon040/041/042/052 pass; Gating 68 rules, 0 failed, 0 warning.
 - Generated `config/reference.php` remains local and intentionally untracked under Canon037.
 
+### 2026-09-22 strict Composer RC closure
+
+- Fresh baseline was clean on local `master`; no Git remote/upstream is configured.
+- Re-checked Canonization package identity, dual-runtime, development symlink, production package, quality, test, and Gating-integration rules against the current tree.
+- `composer validate --strict --check-lock` exposed one remaining RC packaging defect: the manually declared root `version` field.
+- Removed the redundant `version` field from both `composer.json` and `composer.prod.json`; package version remains VCS/package-manager derived.
+- This is packaging hardening only; no merchandising runtime behavior or neighboring component ownership changed.
+- Added `/config/reference.php` to `.gitignore` because quality/runtime inspection generates it locally and Canon037 requires it to remain outside source control.
+- Final quality: PHPStan clean; PHPUnit 15/15 with 87 assertions; PHP-CS-Fixer clean; Playwright 1/1; behavioral evidence generated; Gating 68 rules, 0 failed, 0 warning.
+- Final `composer validate --strict --check-lock`: PASS after lock content-hash synchronization with 0 package updates.
+
 

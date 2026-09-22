@@ -10,6 +10,7 @@
 /.phpunit.cache/
 /.php-cs-fixer.cache
 /composer.lock
+/config/reference.php
 /.env
 /.env.local
 /.idea/
