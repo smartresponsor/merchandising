@@ -7,7 +7,7 @@ namespace App\Merchandising\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
-#[ORM\Table(name: 'merch_composition')]
+#[ORM\Table(name: 'merch_composition', uniqueConstraints: [new ORM\UniqueConstraint(name: 'uniq_merch_key', columns: ['merch_key'])])]
 /**
  * Defines the MerchEntity contract and behavior within Merchandising.
  */
@@ -18,7 +18,7 @@ class MerchEntity
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 120, unique: true)]
+    #[ORM\Column(length: 120)]
     private string $merchKey = '';
 
     #[ORM\Column(length: 180)]
