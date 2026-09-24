@@ -332,4 +332,29 @@
 - `doctrine:migrations:up-to-date`: environment-blocked only because the current process has no PostgreSQL password for 127.0.0.1:5432; no target defect is reported and no credential is invented or persisted.
 - No Merchandising source change is justified by this pass.
 
+## 2026-09-24 — Canon052 consumer Gating isolation closure
+
+### Reconnaissance and baseline
+
+- Re-read the current Merchandising governance, architecture/source-contract documentation, Composer manifest, orchestration journal, mandatory Objecting/Cruding/Viewing/Interfacing dependency contour, Gating enforcement, and current Canonization rules relevant to this repository.
+- Market comparison kept merchant ranking rules, pin/boost/bury/hide, scheduling, preview, experimentation, and behavioral ranking in the growth stream; the RC stream remains correctness, deterministic composition, packaging, and executable canon compliance.
+- Current Git baseline was synchronized with `origin/master` at `4fd5a1972724d7d01892049eca85a7d0f4b5846c`, with pre-existing changes in `composer.json` and a materialized `.gating/` tree.
+- Canon mapping consulted/applied: Canon018 package/subject identity; Canon020 Symfony role roots; Canon022 standalone dependency baseline; Canon040 executable coverage; Canon041/042 behavioral/UI testing and evidence; Canon043 local `dev-master` identity; Canon045 local repository closure; Canon052 Gating consumer integration; Canon053 sibling symlink isolation.
+- Mandatory runtime dependency contour remains present directly in `composer.json`: Objecting, Cruding, Viewing, Interfacing, plus Collectioning, Tabling, EasyAdmin and Gating as required by the standalone baseline.
+
+### RC-critical workstream
+
+- Fresh `composer quality` and `composer canon:check` isolated one blocking defect: Canon052 rejected the consumer `.gating/` directory because it contained a full executable/materialized Gating repository rather than generated artifact state.
+- PHPStan, PHPUnit, PHP-CS-Fixer, Playwright, behavioral coverage, Canon040/041/042, Canon043/045, Canon053, route/database/namespace checks were otherwise green.
+- The materialized `.gating/` tree was moved intact to `var/gating-materialized-20260924` so no source material was destroyed, and the canonical artifact-only `.gating/README.md` marker was restored.
+
+### Growth workstream
+
+- Post-RC maturity remains merchant-authored ranking policies, scheduled rules, preview/simulation, experimentation, analytics, and behavioral ranking inputs through typed source contracts.
+- These features must not move product/category/vendor truth, search indexing ownership, or neighboring persistence into Merchandising.
+
+### Что имеем? Что осталось?
+
+The single fresh RC blocker has been remediated without changing merchandising runtime semantics or deleting the quarantined materialized Gating tree. Remaining work is acceptance verification, diff review, signed integration, publication, and final post-integration state inspection.
+
 
