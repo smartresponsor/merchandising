@@ -357,4 +357,44 @@
 
 The single fresh RC blocker has been remediated without changing merchandising runtime semantics or deleting the quarantined materialized Gating tree. Remaining work is acceptance verification, diff review, signed integration, publication, and final post-integration state inspection.
 
+## 2026-09-25 — Canon055 platform identity terminology closure
+
+### Reconnaissance and baseline
+
+- Re-read the authoritative execution specification, current repository governance, README, Composer manifest, representative source/value/entity/provider/controller code, architecture/unit/functional tests, Gating profile, prior orchestration journal, and current Git/remote state.
+- Re-read mandatory dependency contracts for Objecting, Cruding, Viewing, and Interfacing and verified that composer.json declares their runtime packages and local path/symlink repositories.
+- Re-read Canonization as the normative source, including Canon000, Canon001, Canon002, Canon007, Canon008, Canon010, Canon018, Canon019, Canon020, Canon021, Canon022, Canon041, Canon044, Canon045, Canon047, Canon049, Canon050, Canon051, Canon054, and Canon055; read Gating's canon-rule mirror contract as the executable companion.
+- Target-to-canon mapping remains merchandising/merch -> App\\Merchandising\\ + Merch*, Symfony technical-role-first source roots, Cruding-owned generic CRUD, Objecting-owned reusable system-field packs, explicit Composer dependency edges, lower-snake-case Doctrine identifiers, and neutral multi-domain platform terminology.
+- Current master is synchronized with origin/master at 069fb34e8489171f7622a2c7b1a62e6f1f16934d. Pre-existing dirty state is confined to the materialized .gating/ tree and is treated as external/unowned work.
+
+### Market and maturity contour
+
+- Mature commerce systems separate curated assortment/composition from catalog truth: Shopify exposes collections/recommendation intents while commercetools exposes channel/store Product Selections.
+- RC-critical scope remains deterministic source-backed composition, stable output contracts, boundary enforcement, diagnostics, and executable acceptance.
+- Growth remains merchant pin/boost/bury/hide rules, scheduling, preview/simulation, experimentation, analytics, and richer recommendation/personalization strategies through typed external contracts.
+
+### Baseline gates
+
+- composer validate --strict --check-lock: PASS.
+- quality:phpstan: PASS with 0 errors.
+- quality:phpunit: PASS, 15 tests / 86 assertions.
+- test:behavioral-coverage: PASS and refreshed var/coverage/behavioral-ui.json.
+- runtime:about: PASS on Symfony 8.1.7 / PHP 8.4.13; no runtime restart was required.
+- gate: one deterministic failure, Canon055, caused only by consumer identity presented as platform/shared identity in AGENTS.md and README.md.
+
+### Selected RC-critical implementation
+
+- Replace the two Canon055 terminology violations with repository/component-neutral wording without changing runtime behavior or ownership.
+- Preserve the pre-existing .gating/** worktree state untouched.
+- Re-run deterministic quality/Gating and applicable behavioral/runtime acceptance, then integrate only Merchandising-owned changes.
+
+### Verification after remediation
+
+- gate: PASS — 9 rules, 0 failed, 0 warning, 0 suppressed, 0 skipped; Canon055 is green.
+- composer quality: PASS — PHPStan 0 errors; PHPUnit 15/15 with 86 assertions; PHP-CS-Fixer clean; Playwright 1/1; behavioral coverage evidence refreshed; Gating green.
+- composer validate --strict --check-lock: PASS.
+- runtime:about: PASS on Symfony 8.1.7 / PHP 8.4.13.
+- No browser/mobile UI source changed; Playwright remained applicable as a regression smoke, while new visual screenshot evidence is not applicable to this documentation-only remediation.
+- Working diff review confirms the owned change set is limited to AGENTS.md, README.md, and CMCP_CHANGELOG.md; the pre-existing .gating/** materialization remains unowned and unstaged.
+
 
