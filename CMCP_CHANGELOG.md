@@ -397,4 +397,12 @@ The single fresh RC blocker has been remediated without changing merchandising r
 - No browser/mobile UI source changed; Playwright remained applicable as a regression smoke, while new visual screenshot evidence is not applicable to this documentation-only remediation.
 - Working diff review confirms the owned change set is limited to AGENTS.md, README.md, and CMCP_CHANGELOG.md; the pre-existing .gating/** materialization remains unowned and unstaged.
 
+### Worktree-3 materialization closure
+
+- Reclassified the remaining .gating/** dirt after direct comparison with the canonical Gating repository: README.md, composer.json, AGENTS.md, docs/canon-rule-contract.md, and Canon055 executable rule were byte-for-byte equivalent to the owner repository samples inspected.
+- Canon052 explicitly prohibits copying the Gating engine or policy tree into a consumer .gating/ directory and defines that directory as generated artifact state only.
+- Restored the tracked .gating/README.md consumer artifact marker and preserved the materialized Gating copy physically on disk.
+- Generalized .gitignore from two narrow Gating-generated paths to /.gating/* with !/.gating/README.md, preventing future materialization from dirtying the consumer worktree while retaining the tracked boundary marker.
+- No materialized Gating file was deleted or committed into Merchandising; after the ignore correction the only dirty file was .gitignore.
+
 

@@ -4,8 +4,9 @@
 /playwright-report/
 /.codebase-memory/
 /.console-mcp/
-/.gating/.idea/
-/.gating/.commanding/log/
+# Consumer-local Gating is generated artifact state. Keep only the boundary marker tracked.
+/.gating/*
+!/.gating/README.md
 /var/
 /.phpunit.cache/
 /.php-cs-fixer.cache
