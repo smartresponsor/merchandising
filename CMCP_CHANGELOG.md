@@ -405,4 +405,44 @@ The single fresh RC blocker has been remediated without changing merchandising r
 - Generalized .gitignore from two narrow Gating-generated paths to /.gating/* with !/.gating/README.md, preventing future materialization from dirtying the consumer worktree while retaining the tracked boundary marker.
 - No materialized Gating file was deleted or committed into Merchandising; after the ignore correction the only dirty file was .gitignore.
 
+## 2026-09-26 — RC deterministic duplicate-candidate closure
+
+### Reconnaissance and baseline
+
+- Re-read the authoritative task specification, current Merchandising governance/README/Composer manifest, current source contracts and architecture notes, candidate collector/provider/output contract, representative entities/controllers/tests, active Gating profile, and the existing CMCP journal.
+- Re-read mandatory Objecting, Cruding, Viewing, and Interfacing governance/README/Composer contracts; verified Merchandising declares their direct runtime packages and local path/symlink repositories.
+- Re-read Canonization normative rules Canon001, Canon002, Canon003, Canon008, Canon019, Canon020, Canon021, Canon022, Canon043, Canon048, and Canon049; Gating remains the executable companion rather than the source of normative meaning.
+- Target-to-canon mapping: App\\Merchandising\\ remains role-first; ValueObject is explicitly canonical under Canon001; DTO naming remains explicit; no alternative Domain/Application/Infrastructure/Port/Adapter roots exist; Cruding retains generic CRUD ownership; standalone baseline and dev-master sibling contracts are present; no Entity crosses an async boundary or depends on orchestration roles.
+- Market baseline reviewed against Shopify composable collections/recommendation intents and commercetools storefront Product Projections: mature systems separate source-of-truth catalog ownership from storefront composition and context projection.
+- Git baseline: master at eabd19e045b45355baa031561c3f7e7a12ae2555, synchronized with origin/master; pre-existing dirty state is limited to .gating/README.md and is preserved as unrelated work.
+- Managed PHP runtime on 127.0.0.1:8000 was not running; no restart was performed merely because this RC pass began. Visual Gallery on 100.101.253.65:9477 is healthy.
+- Initial RC diagnostic: GREEN, 0 canon issues. Initial aggregate quality start was deferred by Console MCP capacity policy (heavy execution temporarily disallowed), not by a repository failure.
+
+### RC-critical workstream
+
+- Found a behavioral stability gap in duplicate candidate resolution: when two registrations supplied the same sourceComponent/sourceType/sourceId with equal priority and the same candidate key but different display payloads, the first registration won, making output dependent on Symfony service registration order.
+- Added a final deterministic tie-breaker based on the complete serialized MerchCandidateView contract after the existing priority/source/key tuple.
+- Added regression coverage that executes the same conflicting candidates with forward and reversed registration order and requires byte-equivalent candidate arrays and the same winner.
+- Updated the direct-neighbor aggregation contract documentation to state the final tie-break invariant.
+
+### Growth workstream
+
+- Post-RC maturity remains merchant-authored pin/boost/bury/hide rules, schedules, exclusions, preview/simulation, experimentation, analytics, and richer recommendation/personalization strategies through typed owner-side source contracts.
+- Growth must not move product/category/vendor truth or neighboring persistence into Merchandising.
+
+### Verification result
+
+- Changed PHP lint: PASS for MerchCandidateCollector and MerchCandidateCollectorTest.
+- PHPUnit: PASS — 16 tests, 88 assertions.
+- PHPStan: PASS — 0 errors.
+- PHP-CS-Fixer dry-run: PASS — 0 fixable files.
+- Gating/Canonization: PASS — 9 rules, 0 failed, 0 warning, 0 suppressed, 0 skipped.
+- Composer validation: PASS — composer validate --strict --check-lock.
+- Behavioral evidence: PASS — var/coverage/behavioral-ui.json refreshed.
+- Playwright: PASS — 1/1 standalone HTTP endpoint acceptance test through the repository-owned web-server harness.
+- No browser-rendered UI implementation changed; screenshot evidence is therefore not applicable to this backend deterministic-composition correction.
+- Post-change RC diagnostic still reported workspace_has_uncommitted_changes only because the deliberately preserved pre-existing .gating/README.md is outside the owned mutation set; canon issue count remained 0 and this is not a target-code failure.
+- Exact diff ownership was reviewed. The owned integration set is CMCP_CHANGELOG.md, docs/architecture/direct-neighbor-source-contracts.md, src/Service/MerchCandidateCollector.php, and tests/Unit/MerchCandidateCollectorTest.php. The pre-existing .gating/README.md remains unrelated and must stay unstaged.
+
+
 

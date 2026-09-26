@@ -61,7 +61,8 @@ This gives agents a direct topology map without guessing from routes, table name
 - `displaySafe=false` candidates are never emitted.
 - Overlapping owner registrations are deduplicated by `sourceComponent + sourceType + sourceId`.
 - When the same source-owned identity is supplied more than once, the candidate with the strongest merchandising priority wins.
-- Equal-priority output is ordered deterministically by source component, source type, source id, and candidate key; Symfony service registration order does not define storefront order.
+- Equal-priority output is ordered deterministically by source component, source type, source id, and candidate key.
+- If duplicate candidates also tie on those ranking keys, their complete serialized candidate contract provides the final deterministic tie-break; Symfony service registration order never defines the winner.
 - Source exceptions remain observable. Merchandising does not silently convert a mandatory source failure into an empty candidate set.
 
 ## Forbidden shortcuts

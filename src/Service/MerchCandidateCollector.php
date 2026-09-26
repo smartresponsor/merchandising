@@ -82,13 +82,26 @@ final readonly class MerchCandidateCollector implements MerchCandidateCollectorI
             $left->sourceType,
             $left->sourceId,
             $left->key,
+            self::candidateFingerprint($left),
         ] <=> [
             $right->priority,
             $right->sourceComponent,
             $right->sourceType,
             $right->sourceId,
             $right->key,
+            self::candidateFingerprint($right),
         ];
+    }
+
+    /**
+     * Returns a stable full-contract fingerprint used only to resolve otherwise identical ranking ties.
+     */
+    private static function candidateFingerprint(MerchCandidateView $candidate): string
+    {
+        return json_encode(
+            $candidate->toArray(),
+            JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE,
+        );
     }
 
     /**

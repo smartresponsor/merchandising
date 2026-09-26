@@ -171,4 +171,69 @@ final class MerchCandidateCollectorTest extends TestCase
         ));
         self::assertSame('Duplicate best', $result[0]->title);
     }
+
+    public function testDuplicateWinnerDoesNotDependOnSourceRegistrationOrderWhenRankingKeysTie(): void
+    {
+        $alpha = new class () implements MerchCandidateSourceInterface {
+            public function sourceKey(): string
+            {
+                return 'alpha';
+            }
+
+            public function supportsSlot(string $slotKey): bool
+            {
+                return true;
+            }
+
+            public function provideCandidates(MerchRequestDTO $request, string $slotKey, int $limit = 8): array
+            {
+                return [
+                    new MerchCandidateView(
+                        'producting',
+                        'product',
+                        '1',
+                        'same-key',
+                        'Alpha title',
+                        'Same owner identity and ranking keys.',
+                        'product',
+                        priority: 10,
+                    ),
+                ];
+            }
+        };
+        $zulu = new class () implements MerchCandidateSourceInterface {
+            public function sourceKey(): string
+            {
+                return 'zulu';
+            }
+
+            public function supportsSlot(string $slotKey): bool
+            {
+                return true;
+            }
+
+            public function provideCandidates(MerchRequestDTO $request, string $slotKey, int $limit = 8): array
+            {
+                return [
+                    new MerchCandidateView(
+                        'producting',
+                        'product',
+                        '1',
+                        'same-key',
+                        'Zulu title',
+                        'Same owner identity and ranking keys.',
+                        'product',
+                        priority: 10,
+                    ),
+                ];
+            }
+        };
+
+        $request = new MerchRequestDTO();
+        $forward = (new MerchCandidateCollector([$alpha, $zulu]))->collectForSlot($request, 'top_products');
+        $reverse = (new MerchCandidateCollector([$zulu, $alpha]))->collectForSlot($request, 'top_products');
+
+        self::assertSame($forward[0]->toArray(), $reverse[0]->toArray());
+        self::assertSame('Alpha title', $forward[0]->title);
+    }
 }
