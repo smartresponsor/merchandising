@@ -444,5 +444,13 @@ The single fresh RC blocker has been remediated without changing merchandising r
 - Post-change RC diagnostic still reported workspace_has_uncommitted_changes only because the deliberately preserved pre-existing .gating/README.md is outside the owned mutation set; canon issue count remained 0 and this is not a target-code failure.
 - Exact diff ownership was reviewed. The owned integration set is CMCP_CHANGELOG.md, docs/architecture/direct-neighbor-source-contracts.md, src/Service/MerchCandidateCollector.php, and tests/Unit/MerchCandidateCollectorTest.php. The pre-existing .gating/README.md remains unrelated and must stay unstaged.
 
+### Integration result
+
+- Signed implementation commit 7fe2b0fd3a3edc26c77062b43b51d3e773cd21cd was created from the four owned paths only.
+- A fresh git fetch --prune confirmed origin/master had not advanced; local master was ahead by exactly one commit and behind by zero.
+- The implementation commit was pushed successfully to origin/master.
+- The only remaining worktree modification after the implementation push is the preserved pre-existing .gating/README.md; it was not staged, committed, reset, or overwritten.
+
+
 
 
