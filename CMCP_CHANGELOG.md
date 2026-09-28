@@ -451,6 +451,53 @@ The single fresh RC blocker has been remediated without changing merchandising r
 - The implementation commit was pushed successfully to origin/master.
 - The only remaining worktree modification after the implementation push is the preserved pre-existing .gating/README.md; it was not staged, committed, reset, or overwritten.
 
+## 2026-09-28 — Canon022/045/052 RC closure
+
+### Reconnaissance and baseline
+
+- Authoritative task: autonomous WRITE_ALLOWED RC pass for Merchandising, workspace-confined to this repository.
+- Git baseline: master at a9d6f7ffca776f3941050fc77fe79e6ce1e2887c, synchronized with origin/master; pre-existing dirty state is .gating/README.md only.
+- Fresh CanonScanning baseline fingerprint a0c109666aa9707ccfa6745ea8885176e2df4babb7cd5cc33529dc92aa279376 reports Canon022, Canon045, and Canon052 RED plus stale Canon040 coverage evidence.
+- Fresh Inspecting evidence reports three medium low-property-cohesion observations on MerchEntity, MerchPlacementEntity, and MerchSectionEntity with no autofix/remediation; they are observational for this canon-front closure.
+- Mandatory dependency contour re-read: Objecting, Cruding, Viewing, Interfacing. Canonization is normative; Gating is executable enforcement.
+- Canon mapping consulted directly: Canon022 requires failing/failure in both manifests plus App\\Failing\\FailingBundle registration; Canon045 requires root path-repository closure; Canon052 requires consumer .gating/ to remain generated-artifact-only.
+- Market contour: Shopify, commercetools, and Algolia confirm mature merchandising separates catalog truth from storefront composition; rule-based pin/hide/boost/bury, preview, experimentation, and personalization remain growth, not RC-critical scope.
+
+### Selected RC-critical workstream
+
+- Add the mandatory Failing runtime dependency in development and production manifests.
+- Add the canonical ../Failing dev-master symlink path repository so root Composer closure is complete.
+- Register App\\Failing\\FailingBundle in the standalone Symfony runtime.
+- Preserve the materialized consumer .gating/ tree intact outside .gating/ and restore only the tracked artifact-boundary README at .gating/.
+- Refresh deterministic quality/coverage/Gating evidence after mutation and integrate only coherent Merchandising-owned changes.
+
+### Growth workstream
+
+- Post-RC: merchant-authored ranking controls, schedules, preview/simulation, experimentation, analytics, and richer recommendation/personalization inputs through typed source contracts.
+- These capabilities must not move product/category/vendor truth or neighboring persistence into Merchandising.
+
+### Что имеем? Что осталось?
+
+The three canon failures have factual root causes and bounded fixes. Remaining work is material remediation, fresh acceptance gates, diff ownership review, signed commit, safe fetch/reconciliation, push, and post-integration inspection.
+
+### Verification before integration
+
+- Scoped Composer update installed failing/failure from ../Failing and refreshed gating/gate plus reachable dependency lock state; no repository source outside Merchandising was modified.
+- composer validate --strict --check-lock: PASS.
+- runtime:about: PASS on Symfony 8.1.7 / PHP 8.4.13 with App\\Merchandising\\Kernel and FailingBundle loadable.
+- Fresh PHPUnit path coverage: PASS — 16 tests / 88 assertions; Canon040 evidence refreshed.
+- PHPStan: PASS, 0 errors. PHPUnit: PASS, 16/16. PHP-CS-Fixer dry-run: PASS, 0 files fixable.
+- Playwright repository smoke: PASS, 1/1; behavioral coverage evidence refreshed. No browser-rendered UI implementation changed, so new screenshot evidence is not applicable.
+- Gating repository-local profile: PASS, 9/9 with 0 failed / 0 warning. Orchestration RC validation independently reports canon issue count 0 and all executed validation commands green; its only readiness blocker before commit is workspace_has_uncommitted_changes.
+- Doctrine mapping: PASS. Migration-currentness is environment-blocked before schema work because PostgreSQL at 127.0.0.1:5432 requires a password not present in the process environment; no credential was invented or persisted.
+- Composer audit: PASS, no security vulnerability advisories.
+- Aggregate quality async admission was deferred by shared Console MCP capacity policy (ADMIT_LIGHT_ONLY); the same constituent gates were executed individually and passed.
+- Post-mutation Inspecting execution was attempted as required but the Console MCP call timed out before returning durable evidence; Inspecting engine status remains READY. A retry remains in the integration tail.
+
+### Что имеем? Что осталось?
+
+Canon remediation and deterministic/runtime/behavioral verification are green, with only the known PostgreSQL credential environment block and Inspecting transport timeout external to the code change. Remaining work is signed commit, fetch/push, post-integration RC validation, and one bounded Inspecting retry.
+
 
 
 

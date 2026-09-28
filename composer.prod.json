@@ -10,6 +10,7 @@
     "collectioning/collection": "*@dev",
     "cruding/crud": "*@dev",
     "easycorp/easyadmin-bundle": "^5.0",
+    "failing/failure": "*@dev",
     "interfacing/interface": "*@dev",
     "objecting/object": "*@dev",
     "tabling/table": "*@dev",
