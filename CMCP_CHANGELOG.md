@@ -498,6 +498,19 @@ The three canon failures have factual root causes and bounded fixes. Remaining w
 
 Canon remediation and deterministic/runtime/behavioral verification are green, with only the known PostgreSQL credential environment block and Inspecting transport timeout external to the code change. Remaining work is signed commit, fetch/push, post-integration RC validation, and one bounded Inspecting retry.
 
+### Post-integration Inspecting closure
+
+- Fresh Inspecting run completed despite the synchronous Console MCP transport timing out; normalized report: D:\\PhpstormProjects\\www\\Inspecting\\.inspecting\\reports\\D--PhpstormProjects-www-Merchandising-20260928-114420.json.
+- Inspecting analyzers: PHPStan + php-structure. PHPStan errors: 0. Structural metrics: max complexity 8, max constructor dependencies 1, max fan-out 6, max inheritance depth 1.
+- Findings: exactly 3 medium design observations, all solid.srp.low-property-cohesion on MerchEntity, MerchPlacementEntity, and MerchSectionEntity; confidence 0.76; no autofix and no remediation supplied.
+- Direct semantic review confirms each finding is produced by ordinary independent Doctrine field accessors on a single coherent persistence record. Splitting these entities to satisfy an accessor-cohesion heuristic would damage persistence responsibility and is not justified by Canonization, Gating, tests, or runtime evidence.
+- Therefore the three findings are classified as observational/non-blocking for this RC; no source mutation is justified.
+- Post-integration RC validation is GREEN with canon issue count 0 and no blockers. Published HEAD b59d8b586afcecc4cfbf21b320392d69f6e545cb matched origin/master and the worktree was clean before this journal-only evidence update.
+
+### Что имеем? Что осталось?
+
+The original canon remediation objective is materially complete. Remaining work is only to publish this evidence-only journal update and re-confirm clean HEAD/upstream state; no additional product-code remediation is justified by current evidence.
+
 
 
 
