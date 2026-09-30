@@ -561,6 +561,27 @@ The Canon052 root cause is remediated non-destructively and the consumer artifac
 
 RC evidence is green for the actual changed scope, Canon052 no longer has a target-state cause, and no product-code mutation is warranted. Remaining work is a signed journal/evidence commit, safe fetch/push, and final clean HEAD/upstream inspection.
 
+## 2026-09-30 — engine-20260930210012-merchandising-566491 acceptance closure
+
+### Current-window evidence
+
+- Reconfirmed the upstream RED baseline at fingerprint `303fa70b0d7cc72213c4905484f568d0dbeb3126ae9e2fe875358a03e3009ef8`: the sole failure was Canon052 caused by a copied Gating engine/policy tree under consumer `.gating/`.
+- Re-read Canonization Canon052 and the Gating mirror, plus Objecting, Cruding, Viewing, and Interfacing dependency contracts before remediation.
+- Preserved the entire recurrent `.gating/` materialization non-destructively at `var/gating-legacy-engine-20260930210012/` and restored the tracked non-executable `.gating/README.md`.
+- Retained the pre-existing in-scope `AGENTS.md` correction that states consumer `.gating/` is artifact-only and points executable policy to the installed `gating/gate` package.
+- Full Administering verification executed 71 rules with 0 failed and 0 warnings; `canon.052.gating_integration` passed directly. The temporary Composer script used only to expose that rule-set was reverted immediately; `composer.json` returned to its original SHA-256.
+- `composer validate --strict --check-lock`: PASS.
+- `composer quality`: PASS — PHPStan 0 errors, PHPUnit 16/16 with 88 assertions, PHP-CS-Fixer clean, Playwright 1/1, behavioral coverage refreshed, repository-local Gating green.
+- `runtime:about`: PASS on Symfony 8.1.7 / PHP 8.4.13; Doctrine mapping validation PASS.
+- Post-mutation Inspecting was invoked again with a bounded 600-second contract; the Console MCP transport timed out. Inspecting remains READY. No `src/` PHP changed, so the supplied fingerprint-tied three medium accessor-cohesion observations remain applicable and non-blocking; no speculative entity split is justified.
+- No user-observable browser/mobile UI changed; screenshot evidence is not applicable to this Canon052 integration repair.
+
+### Final RC disposition
+
+- RC-critical Canon052 recurrence is resolved and independently verified by the full canonical rule-set.
+- Growth remains separate: merchant ranking controls, scheduling, preview/simulation, experimentation, analytics, and richer personalization/recommendation source contracts.
+- Remaining execution tail at this journal update: signed commit of the coherent Merchandising-owned change set, safe fetch/push, and final clean HEAD/upstream inspection.
+
 
 
 
