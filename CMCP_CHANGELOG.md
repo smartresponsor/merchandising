@@ -511,6 +511,56 @@ Canon remediation and deterministic/runtime/behavioral verification are green, w
 
 The original canon remediation objective is materially complete. Remaining work is only to publish this evidence-only journal update and re-confirm clean HEAD/upstream state; no additional product-code remediation is justified by current evidence.
 
+## 2026-09-30 — Canon052 artifact-surface recurrence closure
+
+### Reconnaissance and baseline
+
+- Authoritative task: autonomous WRITE_ALLOWED RC pass for Merchandising, confined to `D:\PhpstormProjects\www\Merchandising`.
+- Git baseline: `master` at `bd39f70c4d585fd64cf4e0daa5d34cb0245610b4`, synchronized with `origin/master`; the only pre-existing dirty path was `.gating/README.md`.
+- Upstream CanonScanning fingerprint `303fa70b0d7cc72213c4905484f568d0dbeb3126ae9e2fe875358a03e3009ef8` reported one RED rule: Canon052 Gating integration. All other represented canon rules were green/skipped by applicability.
+- Fresh upstream Inspecting evidence was consumed before mutation: three medium `solid.srp.low-property-cohesion` observations on the three Doctrine entities, with no autofix or supplied remediation. Direct review confirms these remain accessor-cohesion heuristics on coherent persistence records, not an RC defect.
+- Mandatory dependency contour re-read: Objecting, Cruding, Viewing, Interfacing. Canonization remains normative; Gating remains executable enforcement.
+- Canon052 was read directly from Canonization and the mirrored Gating rule. It requires `gating/gate` via Composer and limits consumer `.gating/` to generated artifacts plus a non-executable README.
+- Composer development/production integration is already canonical: `gating/gate` `dev-master`, `../Gating` path repository with `symlink=true`, aggregate `@gate`, and packaged production dependency without a local path repository.
+- Market/maturity contour: mature headless commerce keeps catalog/business truth separate from storefront composition. RC-critical scope remains deterministic source-backed composition, stable output contracts, boundary enforcement, and executable verification; preview/scheduling/ranking experimentation/personalization remain growth.
+
+### Selected RC-critical workstream
+
+- Remediate the recurrent Canon052 artifact-surface violation without deleting or overwriting materialized Gating content.
+- Preserve the entire materialized `.gating/` tree under ignored `var/`, restore only the tracked artifact-boundary README, then re-run deterministic and applicable runtime/behavioral verification.
+- Preserve unrelated/pre-existing work semantics; no merchandising product code change is justified unless verification exposes a defect.
+
+### Material remediation
+
+- Moved the complete recurrent materialized Gating tree intact to `var/gating-materialized-20260930-engine-20260930014442-merchandising-8385b2`.
+- Restored `.gating/README.md` byte-for-byte from the current HEAD canonical marker.
+- No file was deleted; the quarantined material remains available for audit/recovery.
+
+### Growth workstream
+
+- Post-RC: merchant pin/boost/bury/hide controls, scheduling, preview/simulation, experimentation, analytics, and richer personalization/recommendation inputs through typed source contracts.
+- These capabilities must not move product/category/vendor truth, search ownership, or neighboring persistence into Merchandising.
+
+### Что имеем? Что осталось?
+
+The Canon052 root cause is remediated non-destructively and the consumer artifact boundary is restored. Remaining work is deterministic gate/quality/runtime/behavioral verification, post-mutation Inspecting, Git integration, publication, and final state inspection.
+
+### Acceptance verification
+
+- `composer validate`: PASS.
+- `composer quality`: PASS — PHPStan 0 errors; PHPUnit 16/16 with 88 assertions; PHP-CS-Fixer dry-run clean; Playwright API acceptance 1/1; behavioral/UI coverage evidence refreshed; repository-local Gating 9/9.
+- Canonical Gating owner `tool/check-consumer.ps1` against the Merchandising profile: PASS, 9/9, 0 failed/warning/skipped.
+- Standalone runtime `runtime:about`: PASS on Symfony 8.1.7 / PHP 8.4.13 with `App\Merchandising\Kernel`.
+- Doctrine mapping validation: PASS. Database synchronicity was intentionally not invoked because this remediation does not change persistence metadata.
+- RC diagnostic after remediation: canon issue count 0; the only temporary blocker is the journal's expected uncommitted change.
+- Managed PHP server on 127.0.0.1:8000 was absent and was not restarted merely for this run; Playwright exercised the repository-owned test web-server harness on 127.0.0.1:8092 successfully.
+- Fresh Inspecting execution was attempted after remediation but the Console MCP call timed out. The supplied Inspecting evidence remains applicable because the inspected `src/` scope did not change; only the consumer artifact surface and orchestration journal changed. Inspecting engine status is READY and no source-level finding became stale.
+- Visual Gallery service is healthy. No user-observable UI implementation changed, so new screenshot evidence is not applicable.
+
+### Что имеем? Что осталось?
+
+RC evidence is green for the actual changed scope, Canon052 no longer has a target-state cause, and no product-code mutation is warranted. Remaining work is a signed journal/evidence commit, safe fetch/push, and final clean HEAD/upstream inspection.
+
 
 
 
