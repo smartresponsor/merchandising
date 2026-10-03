@@ -683,6 +683,37 @@ The stale Canon052 report has been reconciled against current executable evidenc
 
 All deterministic, behavioral, runtime, coverage, and mapping gates applicable to this change are green. Remaining work is exact diff ownership review, remote fetch/reconciliation, signed commit/push of `AGENTS.md` plus this journal, and final clean HEAD/upstream inspection.
 
+## 2026-10-03 — engine-20261003182719-merchandising-1b6d3e
+
+### Current-window baseline and canon mapping
+
+- Started from clean `master` and consumed the supplied CanonScanning fingerprint `303fa70b0d7cc72213c4905484f568d0dbeb3126ae9e2fe875358a03e3009ef8` plus its historical Canon052 RED report before selecting work.
+- Re-read current Merchandising README/manifests, `.gitignore`, Gating profile, artifact-boundary marker, representative Doctrine entities and behavioral evidence producer.
+- Re-read mandatory Objecting, Cruding, Viewing, and Interfacing contracts; re-read Gating ownership and Canonization Canon018, Canon021, Canon023, Canon024, and Canon052 normative rules.
+- Canon mapping remains: `merchandising/merch` -> `App\\Merchandising\\` + `Merch*`; generic CRUD stays in Cruding; local first-party development dependencies stay symlinked; production stays path-independent; consumer `.gating/` stays artifact-only.
+- Current `.gating/README.md` and `.gitignore` already implement the Canon052 artifact-only boundary. Therefore the supplied RED report is stale for the current repository state and no repeated quarantine/removal mutation is justified.
+- Supplied Inspecting evidence remains three medium low-property-cohesion observations on coherent Doctrine records, with no autofix/remediation; no entity split is justified solely to satisfy that heuristic.
+
+### Market and maturity contour
+
+- Shopify's current section/block model confirms modular, reorderable merchant composition as a market baseline. Merchandising's source-backed section/order composition remains inside its responsibility.
+- Growth remains merchant-authored ranking controls, scheduling, preview/simulation, experimentation, analytics, and richer personalization/recommendation inputs through typed owner-side contracts; product/category/vendor/payment/shipping truth remains outside Merchandising.
+
+### Verification
+
+- Current `composer gate`: PASS — 10 rules, 0 failed/warning/skipped; Canon-related namespace, typed-layer, table-prefix, architecture, mutation-safety and secret checks are green.
+- Aggregate `composer quality` was temporarily denied by shared Console MCP heavy-capacity admission (`ADMIT_LIGHT_ONLY`), so its deterministic constituents were executed individually instead of treating capacity as a repository failure.
+- `quality:phpstan`: PASS, 0 errors.
+- `quality:phpunit`: PASS, 16 tests / 88 assertions.
+- `quality:cs:dry`: PASS, 0 fixable files.
+- `quality:ui`: PASS, Playwright 1/1 against the repository-owned bounded test server on `127.0.0.1:8092`.
+- `test:behavioral-coverage`: PASS and refreshed ignored `var/coverage/behavioral-ui.json`.
+- No user-observable UI implementation changed in this window, so new screenshot evidence is not applicable; Playwright provides behavioral regression evidence.
+
+### Что имеем? Что осталось?
+
+The historical Canon052 RED is factually superseded by the current green artifact-only topology and executable gate. No product-code mutation is justified by present evidence. Remaining work is runtime/Doctrine spot verification, Git/upstream reconciliation, publication of this evidence-only journal checkpoint, and final clean-state confirmation.
+
 
 
 
