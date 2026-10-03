@@ -582,6 +582,53 @@ RC evidence is green for the actual changed scope, Canon052 no longer has a targ
 - Growth remains separate: merchant ranking controls, scheduling, preview/simulation, experimentation, analytics, and richer personalization/recommendation source contracts.
 - Remaining execution tail at this journal update: signed commit of the coherent Merchandising-owned change set, safe fetch/push, and final clean HEAD/upstream inspection.
 
+## 2026-10-03 — engine-20261003175011-merchandising-7ff2b0
+
+### Reconnaissance and baseline
+
+- Read the authoritative execution specification, current Merchandising governance, Composer development/production manifests, architecture documentation, representative source/tests/tooling, and the prior orchestration journal.
+- Re-read mandatory Objecting, Cruding, Viewing, and Interfacing contracts. Re-read Canonization as normative policy and Gating as executable enforcement.
+- Consumed the supplied CanonScanning fingerprint `303fa70b0d7cc72213c4905484f568d0dbeb3126ae9e2fe875358a03e3009ef8` and its RED Canon052 report before re-running verification. Current repository state has already moved beyond that report: `.gating/` contains only the non-executable tracked README marker and current `composer gate` passes.
+- Consumed supplied Inspecting evidence: three medium accessor-cohesion observations on the three Doctrine entities, with no autofix/remediation. No `src/` PHP was changed in this pass, so that inspected scope remains unchanged.
+- Existing `AGENTS.md` modification predates this task window and is preserved as unrelated work; it is not part of this task-owned integration set.
+- No tracked `.github` workflow tree is present in the current repository; project-local Composer, PHPUnit, PHPStan, PHP-CS-Fixer, Playwright, Gating and Symfony/Doctrine commands are the executable verification surfaces.
+
+### Canon mapping and selected RC-critical work
+
+- Canon017: current architecture documentation must match runtime/source topology and must not preserve retired classes or package facts.
+- Canon018: `merchandising/merch` maps to `App\\Merchandising\\` plus the `Merch*` subject vocabulary.
+- Canon026: platform baseline is PHP 8.4+ and Symfony 8.1+ within Symfony 8.
+- Canon052: consumer `.gating/` is artifact-only and executable policy comes from installed `gating/gate`; the current tree satisfies this requirement.
+- Selected current RC debt: factual documentation drift, not product-code remediation. `ARCHITECTURE.md` and Composer baseline docs still described Symfony 8.0, the retired `Merchandising*` subject vocabulary, a removed hardcoded root version, and demo providers no longer present in the repository.
+
+### Material implementation
+
+- Updated architecture documentation to Symfony 8.1 and the canonical `Merch*` subject stem under `App\\Merchandising\\`.
+- Removed stale documentation for the deleted hardcoded Composer root version.
+- Replaced the obsolete demo-provider statement with the current owner-side tagged source-contract model.
+- No runtime, API, persistence, browser/mobile UI, or neighboring repository source was changed.
+
+### Growth workstream
+
+- Merchant-authored pin/boost/bury/hide controls, scheduling, preview/simulation, experimentation, analytics, and richer recommendation/personalization inputs remain post-RC growth.
+- Product/category/vendor truth, search/index ownership, and neighboring persistence remain outside Merchandising.
+
+### Gates to close
+
+- Strict Composer validation/check-lock; aggregate quality; fresh PHPUnit coverage; standalone Symfony runtime; Doctrine mapping; current Gating; bounded Inspecting applicability check; exact Git diff/branch/upstream reconciliation and publication of only task-owned paths.
+
+### Acceptance verification
+
+- `composer validate --strict --check-lock`: PASS.
+- `composer quality`: PASS — PHPStan 0 errors; PHPUnit 16/16 with 88 assertions; PHP-CS-Fixer clean; Playwright 1/1; behavioral/UI evidence refreshed; Gating 10/10 with 0 failures/warnings/skips.
+- Fresh PHPUnit path coverage execution: PASS, 16/16 tests with 88 assertions; persistent summary refreshed under ignored `var/coverage/`.
+- Standalone runtime: PASS on Symfony 8.1.7 / PHP 8.4.13 with `App\\Merchandising\\Kernel`.
+- Doctrine mapping validation: PASS; database synchronization intentionally skipped by the mapping-only command because persistence metadata did not change.
+- Managed `127.0.0.1:8000` server was not running; the status probe observed an unrelated/existing HTTP 500 listener, so no restart was performed. Repository-owned Playwright used its test harness on `127.0.0.1:8092` and passed.
+- Fresh Inspecting: COMPLETE — PHPStan 0 errors; exactly the same three medium `solid.srp.low-property-cohesion` observations on MerchEntity, MerchPlacementEntity, and MerchSectionEntity, no autofix/remediation. They remain observational accessor-cohesion heuristics on coherent Doctrine records and do not justify source mutation.
+- No user-observable UI implementation changed; new screenshot evidence is not applicable.
+- Current dirty set is task-owned documentation/journal plus the preserved pre-existing `AGENTS.md` change, which remains excluded from integration.
+
 
 
 

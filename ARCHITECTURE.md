@@ -8,7 +8,7 @@
 - Business short stem: `Merch`
 - Database/config prefix: `merch_`
 - PHP: `^8.4`
-- Symfony: `^8.0`
+- Symfony: `^8.1`
 
 ## Responsibility
 
@@ -35,7 +35,7 @@ The Bridging layer consumes `MerchInterfacingPayloadProviderInterface` and maps 
 - Source bridges are mirrored:
   - `src/Service/Source/*`
   - `src/ServiceInterface/Source/*`
-- Class names use the component prefix `Merchandising` unless a Symfony convention requires otherwise.
+- Component-owned business types use the canonical `Merch` subject stem under the `App\Merchandising\` namespace; Symfony framework types follow their framework conventions.
 - Doctrine table names start with `merch_`.
 - Config keys start with `merch_`.
 

@@ -9,10 +9,10 @@ Doctrine ORM 4 is not a stable release line for this component baseline. The pac
 ## Canon
 
 - PHP: `^8.4`
-- Symfony packages: `^8.0`
+- Symfony packages: `^8.1`
 - Doctrine ORM: `^3.6`
 - Composer package: `merchandising/merch`
-- Root skeleton version: `0.1.0-dev`
+- Package version is derived from VCS/package-manager metadata; the root manifest does not hardcode a `version` field.
 
 ## Quality script aliases
 
