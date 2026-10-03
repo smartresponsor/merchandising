@@ -104,10 +104,35 @@ final class MerchCandidateCollectorTest extends TestCase
             }
         };
 
-        $contracts = (new MerchCandidateCollector([$direct, $plain]))->registeredSources();
+        $zulu = new class () implements MerchDirectNeighborSourceInterface {
+            public function sourceKey(): string
+            {
+                return 'zulu';
+            }
 
-        self::assertCount(1, $contracts);
-        self::assertSame('catalog', $contracts[0]->sourceKey);
+            public function supportsSlot(string $slotKey): bool
+            {
+                return true;
+            }
+
+            public function provideCandidates(MerchRequestDTO $request, string $slotKey, int $limit = 8): array
+            {
+                return [];
+            }
+
+            public function contractView(): MerchSourceContractView
+            {
+                return new MerchSourceContractView('zulu', 'producting', 'product', 'Producting', self::class);
+            }
+        };
+
+        $contracts = (new MerchCandidateCollector([$zulu, $direct, $plain]))->registeredSources();
+
+        self::assertCount(2, $contracts);
+        self::assertSame(['catalog', 'zulu'], array_map(
+            static fn (MerchSourceContractView $contract): string => $contract->sourceKey,
+            $contracts,
+        ));
     }
 
     public function testCollectorRejectsNonPositiveLimit(): void

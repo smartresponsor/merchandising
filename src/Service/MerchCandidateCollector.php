@@ -10,6 +10,7 @@ use App\Merchandising\ServiceInterface\MerchSourceTopologyProviderInterface;
 use App\Merchandising\ServiceInterface\Source\MerchCandidateSourceInterface;
 use App\Merchandising\ServiceInterface\Source\MerchDirectNeighborSourceInterface;
 use App\Merchandising\ValueObject\MerchCandidateView;
+use App\Merchandising\ValueObject\MerchSourceContractView;
 
 /**
  * Defines the MerchCandidateCollector contract and behavior within Merchandising.
@@ -116,6 +117,23 @@ final readonly class MerchCandidateCollector implements MerchCandidateCollectorI
                 $contracts[] = $source->contractView();
             }
         }
+
+        usort(
+            $contracts,
+            static fn (MerchSourceContractView $left, MerchSourceContractView $right): int => [
+                $left->sourceKey,
+                $left->sourceComponent,
+                $left->sourceType,
+                $left->ownerComponent,
+                $left->implementationClass,
+            ] <=> [
+                $right->sourceKey,
+                $right->sourceComponent,
+                $right->sourceType,
+                $right->ownerComponent,
+                $right->implementationClass,
+            ],
+        );
 
         return $contracts;
     }
