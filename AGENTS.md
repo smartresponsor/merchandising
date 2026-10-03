@@ -86,14 +86,20 @@
 - Владеет полной общей документацией платформы.
 - Каждый компонент хранит только документацию своей ответственности.
 
-## 5. Zero CRUD controllers и zero CRUD routes YAML
+## 5. Generic application CRUD ownership и EasyAdmin exception
 
-Целевое состояние обычного приложения:
+Целевое состояние обычного приложения относится к generic application CRUD, которым владеет Cruding:
 
 ```text
-zero CRUD controllers
-zero CRUD routes YAML
+zero generic application CRUD controllers outside Cruding
+zero generic application CRUD routes YAML outside Cruding
 ```
+
+EasyAdmin CRUD controllers and routes used for administrative/back-office surfaces are explicitly allowed by Canon021. They are an admin UI surface and do not compete with Cruding's generic application CRUD ownership.
+
+`Generated` in an EasyAdmin controller name or path does not by itself make that controller a disposable generated artifact. Do not delete or untrack an EasyAdmin CRUD controller merely because it is named `Generated`, `Crud`, or `CrudController`. Removal requires a separate explicit canonical rule plus runtime/admin-behavior evidence that the source is reproducible and behaviorally replaced.
+
+Canonization textual rules are authoritative. If an `AGENTS.md` projection disagrees with them, the Canonization rule wins and the projection must be synchronized.
 
 Generic операции принадлежат Cruding:
 
