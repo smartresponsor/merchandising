@@ -904,6 +904,30 @@ Current `master` is canon-green and synchronized upstream before this journal mu
 
 The RC hardening is green and bounded to deterministic source-topology diagnostics plus regression coverage. Remaining work is Git fetch/reconciliation, signed commit/push of the task-owned product/test paths, and final HEAD/upstream inspection; the shared journal path must be handled without destroying or misattributing concurrent orchestration content.
 
+## 2026-10-03 — engine-20261003192747-merchandising-42ccac
+
+### Current-window checkpoint
+
+- Resolved `D:\PhpstormProjects\www\Merchandising` through Console MCP and preserved the already-present coherent in-scope source/test patch rather than overwriting concurrent work.
+- Read the authoritative task specification in full; consumed the supplied CanonScanning Canon052 RED and Inspecting baseline. Current `composer gate` is green, so the historical copied-consumer-Gating topology is stale for the current tree.
+- Re-read Merchandising governance/manifests/source/test/tooling plus mandatory Objecting, Cruding, Viewing, Interfacing, Gating and Canonization root contracts. Canonization `Canon052GatingIntegrationRule.md` was located locally; direct rule reads returned Console-MCP HTTP 502 during this window, so no textual rule content was invented beyond locally observed evidence and already-integrated current-tree contracts.
+- Market comparison against current Algolia and Constructor merchandising controls confirms deterministic source-backed composition/diagnostics as RC-critical, while pin/boost/bury/hide authoring, scheduling, preview, experimentation, analytics and AI/personalization remain growth.
+
+### Verification
+
+- `composer validate --strict --check-lock`: PASS.
+- Changed source/test PHP lint: PASS.
+- PHPUnit: PASS — 16 tests / 88 assertions.
+- PHP-CS-Fixer dry-run: PASS — 0/39 fixable files.
+- Gating: PASS — 10 rules, 0 failed/warning/suppressed/skipped.
+- Playwright: PASS — 1/1 standalone HTTP contract.
+- Behavioral coverage evidence: refreshed successfully.
+- Post-mutation Inspecting: COMPLETE — PHPStan 0 errors; the same three medium non-autofixable `solid.srp.low-property-cohesion` observations on Doctrine entities; no new finding attributable to the topology-ordering patch.
+
+### Что имеем? Что осталось?
+
+The deterministic topology hardening is materially implemented and verified. During this window a concurrent orchestration stream committed and published the source/test patch as `2f03ce3` (`fix: stabilize merchandising source topology`); after a fresh `git fetch origin --prune`, `master` remains synchronized with `origin/master`. The only remaining task-owned worktree change is this journal checkpoint; remaining work is its signed commit/push and final clean/upstream confirmation.
+
 
 
 
