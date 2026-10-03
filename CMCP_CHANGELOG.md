@@ -813,6 +813,33 @@ All applicable deterministic, behavioral, runtime, and mapping checks are green.
 
 The current repository is deterministically green and the upstream Canon052 RED has no current target-state cause. The only task-owned mutation is this factual orchestration journal checkpoint. Remaining work is exact diff review, signed commit, safe push to the synchronized upstream, and final clean HEAD/upstream confirmation.
 
+## 2026-10-03 — engine-20261003185040-merchandising-ba4acf
+
+### Reconnaissance and current-state reconciliation
+
+- Resolved the authoritative workspace through Console MCP to `D:\PhpstormProjects\www\Merchandising` and consumed the supplied CanonScanning RED report before selecting work. The supplied fingerprint `303fa70b0d7cc72213c4905484f568d0dbeb3126ae9e2fe875358a03e3009ef8` records one historical Canon052 failure caused by a full executable Gating tree under consumer `.gating/`.
+- Re-read current Merchandising governance, README, development/production Composer manifests, Gating profile, `.gitignore`, and orchestration journal. Current Composer integration uses `gating/gate` through the development sibling path/symlink and packaged production identity; consumer `.gating/` is artifact-only.
+- Re-read mandatory Objecting, Cruding, Viewing, and Interfacing contracts (Interfacing has no root `MANIFEST.json`) plus Gating ownership and Canonization normative Canon022, Canon030, Canon045, Canon052 and the guard matrix.
+- Canonization confirms the six-component application contour `Objecting`, `Cruding`, `Collectioning`, `Tabling`, `Viewing`, `Interfacing`, and the Entity-First migration/schema-parity invariant. The already-integrated `AGENTS.md` projection at current HEAD matches those constraints.
+- The worktree changed concurrently during this execution window: an earlier coherent `AGENTS.md` + journal change was committed and pushed by the parallel orchestration stream as `de14bdc3dd32634bcf179772bf78cc1fb9a67ba9` (`docs: align Merchandising guidance with canon`). The current branch is `master`, synchronized with `origin/master`, and was clean before this task-specific journal entry. No duplicate product or guidance mutation was applied.
+
+### RC-critical and growth separation
+
+- RC-critical conclusion: the historical Canon052 report has no current target-state cause; the repository guidance correction is already integrated. No PHP source, persistence metadata, API, navigation, form, browser/mobile interaction, or user flow requires another remediation wave from the supplied evidence.
+- Growth remains separate: merchant-authored pin/boost/bury/hide rules, scheduling, preview/simulation, experimentation, analytics, and richer personalization/recommendation inputs through typed owner-side contracts. Product/category/vendor/payment/shipping truth and search/index ownership remain outside Merchandising.
+
+### Current-window verification and runtime policy
+
+- Managed PHP runtime on `127.0.0.1:8000` is not running; an unmanaged listener responds HTTP 500. Under REUSE_EXISTING_FIRST no restart was performed.
+- Visual Gallery service is healthy at the central workspace artifact root and returned HTTP 200 on its health probe.
+- Fresh Composer validation, Gating, Inspecting-report parsing, and RC-validation execution were attempted through Console MCP after the concurrent integration; those execution/quality endpoints returned upstream HTTP 502. This is recorded as a Console-MCP transport/infrastructure failure, not a repository test failure. Repository/Git/file/runtime status endpoints remained operational.
+- The immediately preceding repository acceptance evidence on the same documentation-only scope records strict Composer validation PASS, aggregate quality PASS (PHPStan 0 errors, PHPUnit 16/16 with 88 assertions, PHP-CS-Fixer clean, Playwright 1/1, behavioral coverage, Gating 10/10), standalone Symfony 8.1.7 / PHP 8.4.13 boot PASS, and Doctrine mapping PASS. Because no `src/` PHP or UI implementation changed in the integrated guidance commit, the supplied Inspecting source findings and prior behavioral evidence remain scope-applicable; they are not presented here as a fresh rerun.
+- No user-observable UI implementation changed, so no new screenshot artifact is applicable.
+
+### Что имеем? Что осталось?
+
+The current `master` contains the justified canon-guidance remediation and is published upstream. The only current-window mutation is this task-specific orchestration journal entry. Remaining work is to integrate this journal entry coherently, re-check final HEAD/worktree/upstream state, and report the Console-MCP 502 execution limitation without misclassifying it as a repository RED.
+
 
 
 
