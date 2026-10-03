@@ -840,6 +840,70 @@ The current repository is deterministically green and the upstream Canon052 RED 
 
 The current `master` contains the justified canon-guidance remediation and is published upstream. The only current-window mutation is this task-specific orchestration journal entry. Remaining work is to integrate this journal entry coherently, re-check final HEAD/worktree/upstream state, and report the Console-MCP 502 execution limitation without misclassifying it as a repository RED.
 
+## 2026-10-03 — engine-20261003191249-merchandising-7267b5
+
+### Reconnaissance and baseline
+
+- Resolved the authoritative workspace through Console MCP to `D:\PhpstormProjects\www\Merchandising`; baseline was clean `master` at `9b3fe083bbbb530f505a2717951a22b7dd90b6c2`, synchronized with `origin/master` (ahead 0 / behind 0).
+- Consumed the supplied CanonScanning fingerprint `303fa70b0d7cc72213c4905484f568d0dbeb3126ae9e2fe875358a03e3009ef8` and its historical Canon052 RED before selecting work. The current repository no longer contains that failing topology.
+- Consumed the supplied Inspecting report before mutation: three medium `solid.srp.low-property-cohesion` observations on the three Doctrine entities, with no autofix/remediation; no `src/` PHP changed in this task window, so that source-level evidence remains applicable and observational.
+- Re-read current Merchandising governance, README, development/production Composer manifests, Gating profile, `.gitignore`, package scripts and orchestration journal. No root `MANIFEST.json` exists in the current target tree.
+- Re-read mandatory Objecting, Cruding, Viewing and Interfacing AGENTS/README/Composer contracts, plus Gating ownership, Inspecting role, and Canonization authoritative `Canon052GatingIntegrationRule`.
+- Target-to-canon mapping remains canonical: `merchandising/merch` -> `App\Merchandising\` + `Merch*`; generic CRUD belongs to Cruding; reusable system fields belong to Objecting; final rendering/shell responsibilities remain Viewing/Interfacing; Gating executes from the installed `gating/gate` package; consumer `.gating/` is artifact-only.
+
+### Market/maturity contour and selected work
+
+- Current composable-commerce practice continues to separate storefront composition/extensions from catalog/order truth and favors reproducible, versioned configuration/automation. Saleor's current public platform positioning emphasizes headless composability, extensibility, and commerce-as-code.
+- RC-critical scope therefore remains deterministic composition, package/runtime correctness, boundary enforcement, diagnostics and executable verification. Merchant pin/boost/bury/hide controls, schedules, preview/simulation, experimentation, analytics and richer personalization/recommendation inputs remain growth.
+- No new product-code remediation is justified by current evidence. The selected safe work is factual verification plus this task-specific orchestration checkpoint; repeating the old `.gating/` quarantine would regress a currently green repository.
+
+### Current verification
+
+- `composer validate --strict --check-lock`: PASS.
+- Current repository `gate`: PASS — 10 rules, 0 failed, 0 warning, 0 suppressed, 0 skipped.
+- Canon052 historical RED is therefore stale for the present tree and is not a current RC blocker.
+
+### Что имеем? Что осталось?
+
+Current `master` is canon-green and synchronized upstream before this journal mutation; no runtime/UI/source remediation is warranted. Remaining work is final aggregate quality/runtime spot verification, commit/push of this journal-only evidence, and post-publication clean HEAD/upstream confirmation.
+
+## 2026-10-03 — engine-20261003192105-merchandising-239f62
+
+### Baseline and canon mapping
+
+- Resolved `D:\PhpstormProjects\www\Merchandising` through Console MCP; task baseline was clean `master`.
+- Consumed the supplied CanonScanning RED and Inspecting evidence before mutation. Canon052 is stale for the present tree: the copied executable `.gating/` surface is absent and current repository `composer gate` passes.
+- Re-read Merchandising README/Composer/package contracts plus current candidate aggregation/provider tests.
+- Re-read Canonization `Canon052GatingIntegrationRule` and guard matrix, Gating owner contracts, and Objecting ownership guidance. Current Composer integration keeps `gating/gate` as a dev dependency with sibling symlink wiring; consumer `.gating/` remains artifact-only.
+- Market baseline reviewed against current Constructor and Algolia merchandising capabilities: mature systems combine deterministic merchant controls, scheduling/preview, analytics, and AI/personalized ranking while keeping catalog/inventory/customer truth external.
+
+### RC-critical workstream
+
+- Found a deterministic diagnostics gap: `collectForSlot()` was registration-order independent, but `registeredSources()` emitted direct-neighbor source topology in Symfony service registration order.
+- Changed `registeredSources()` to sort source contracts by stable semantic identity (`sourceKey`, `sourceComponent`, `sourceType`, `ownerComponent`, `implementationClass`).
+- Extended unit coverage with reversed registration order to prove topology output ordering is stable.
+
+### Growth workstream
+
+- Scheduling/preview, experimentation, analytics, explainable merchant ranking, and personalized/AI reranking remain post-RC growth and are not required for this hardening patch.
+
+### Gates to close
+
+- Changed-file PHP lint, PHPUnit, PHPStan, PHP-CS-Fixer dry run, aggregate quality including Playwright/behavioral evidence and Gating, post-mutation Inspecting, strict Composer validation, Git reconciliation, signed commit/push, and final clean/upstream inspection.
+
+### Acceptance verification
+
+- Changed-file PHP lint: PASS for `MerchCandidateCollector.php` and its unit test.
+- `composer quality`: PASS — PHPStan 0 errors; PHPUnit 16/16 with 88 assertions; PHP-CS-Fixer clean; Playwright 1/1; behavioral/UI evidence refreshed; Gating 10/10 with 0 failures/warnings/skips.
+- `composer validate --strict --check-lock`: PASS.
+- Fresh Inspecting: COMPLETE — PHPStan 0 errors and the same three medium `solid.srp.low-property-cohesion` observations on the three Doctrine entities, with no autofix/remediation. No new finding is attributable to the topology-ordering change.
+- No browser/mobile UI implementation changed; Playwright is behavioral regression evidence and new screenshots are not applicable.
+- Diff review found a concurrently appended orchestration-journal block from `engine-20261003191249-merchandising-7267b5`. It is preserved as valuable external work and must not be silently discarded or misattributed to this task.
+
+### Что имеем? Что осталось?
+
+The RC hardening is green and bounded to deterministic source-topology diagnostics plus regression coverage. Remaining work is Git fetch/reconciliation, signed commit/push of the task-owned product/test paths, and final HEAD/upstream inspection; the shared journal path must be handled without destroying or misattributing concurrent orchestration content.
+
 
 
 
