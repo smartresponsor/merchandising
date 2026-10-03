@@ -714,6 +714,105 @@ All deterministic, behavioral, runtime, coverage, and mapping gates applicable t
 
 The historical Canon052 RED is factually superseded by the current green artifact-only topology and executable gate. No product-code mutation is justified by present evidence. Remaining work is runtime/Doctrine spot verification, Git/upstream reconciliation, publication of this evidence-only journal checkpoint, and final clean-state confirmation.
 
+## 2026-10-03 — engine-20261003182159-merchandising-bdfa2d
+
+### Reconnaissance and baseline
+
+- Resolved `D:\PhpstormProjects\www\Merchandising` through Console MCP. Baseline: clean `master`, HEAD `097a7c9d112d3074c76533b0332b4c3899409c96`, synchronized with `origin/master` (ahead 0 / behind 0).
+- Read current target `AGENTS.md`, `README.md`, `composer.json`, `composer.prod.json`, `.gitignore`, Gating profile, and orchestration journal.
+- Read mandatory Objecting, Cruding, Viewing, and Interfacing AGENTS/README/Composer contracts; read Gating AGENTS/README/Composer contract.
+- Read Canonization `AGENTS.md`, README and normative `Canon052GatingIntegrationRule.md`. Current `.gating/` contains only the non-executable artifact-boundary README and current `composer gate` passes 10/10, so the supplied Canon052 RED at fingerprint `303fa70b0d7cc72213c4905484f568d0dbeb3126ae9e2fe875358a03e3009ef8` is stale for the present tree.
+- Current market contour checked against Shopify manual collection ordering, Algolia pin/hide/boost/bury plus preview, and commercetools Product Selections. Baseline expectation is deterministic curated composition over externally owned product/catalog truth; richer merchant rule authoring, preview, experimentation, and personalization remain growth.
+
+### Canon mapping and selected RC-critical work
+
+- Canonization platform guidance now defines the mandatory application dependency contour as Objecting, Cruding, Collectioning, Tabling, Viewing, and Interfacing. Merchandising `composer.json` already declares that contour, but local `AGENTS.md` still documented only four helpers.
+- Current Entity-First canon requires Doctrine migrations to reproduce current metadata from a clean database and schema parity to be checked separately. Merchandising `AGENTS.md` still stated that migrations were not part of the normal workflow.
+- Selected bounded RC remediation: synchronize repository-local agent guidance with the already-implemented Composer/runtime/schema contract. No product/runtime/API/UI mutation is required.
+
+### Material implementation
+
+- Updated `AGENTS.md` to document the complete six-component application dependency contour and explicit local Composer path/symlink wiring expectation.
+- Updated Entity-First guidance to require migrations to reproduce current metadata, isolated schema-parity verification, and mapping/migration/parity checks after persistence metadata changes.
+- No PHP source, persistence metadata, browser/mobile UI, route, form, interaction, or user flow was changed.
+
+### Growth workstream
+
+- Post-RC: merchant-authored pin/boost/bury/hide rules, scheduling, preview/simulation, experimentation, analytics, and richer personalization/recommendation inputs through typed owner-side contracts.
+- Product/category/vendor/payment/shipping truth and search/index ownership remain outside Merchandising.
+
+### Gates to close
+
+- Strict Composer validation/check-lock, aggregate quality, current Gating, runtime/Doctrine spot checks, exact diff ownership, signed Git integration, safe fetch/push, and final clean HEAD/upstream inspection.
+
+### Что имеем? Что осталось?
+
+The historical Canon052 failure is already resolved in the current repository. The current task now has a concrete canon-documentation remediation applied. Remaining work is deterministic acceptance and Git publication of only the coherent Merchandising-owned guidance+journal change.
+
+### Acceptance verification
+
+- `composer validate --strict --check-lock`: PASS.
+- `composer quality`: PASS — PHPStan 0 errors; PHPUnit 16/16 with 88 assertions; PHP-CS-Fixer dry-run clean; Playwright 1/1; behavioral/UI evidence refreshed; Gating 10/10 with 0 failures/warnings/skips.
+- Standalone Symfony runtime: PASS on Symfony 8.1.7 / PHP 8.4.13 with `App\\Merchandising\\Kernel`.
+- Doctrine mapping validation: PASS with `--skip-sync`; persistence metadata was not changed, so database synchronicity/migration execution is not required for this documentation-only remediation.
+- Managed PHP runtime on `127.0.0.1:8000` is not running; an unrelated listener returns HTTP 500. No restart was performed under REUSE_EXISTING_FIRST. Playwright used the repository-owned bounded test server on `127.0.0.1:8092` and passed.
+- Supplied Inspecting evidence remains applicable because no `src/` PHP changed. The three medium low-property-cohesion findings remain observational Doctrine-accessor heuristics with no autofix/remediation and are not promoted to RC blockers by current canon/gates.
+- No user-observable browser/mobile UI implementation changed; new screenshot evidence is not applicable.
+- Exact dirty set after verification is `AGENTS.md` plus this orchestration journal only.
+
+### Что имеем? Что осталось?
+
+All applicable deterministic, behavioral, runtime, and mapping checks are green. Remaining work is Git remote reconciliation, a coherent signed commit of these two owned files, publication to `origin/master`, and final clean/upstream confirmation.
+
+## 2026-10-03 — engine-20261003183712-merchandising-b3d638
+
+### Reconnaissance and baseline
+
+- Resolved the authoritative workspace through Console MCP to `D:\PhpstormProjects\www\Merchandising`; baseline is clean `master` at `097a7c9d112d3074c76533b0332b4c3899409c96`, synchronized with `origin/master`.
+- Consumed the supplied CanonScanning report first. Its historical fingerprint `303fa70b0d7cc72213c4905484f568d0dbeb3126ae9e2fe875358a03e3009ef8` has one RED rule, Canon052, caused by a full Gating source tree under consumer `.gating/`.
+- Consumed the supplied Inspecting evidence first: three medium low-property-cohesion observations on `MerchEntity`, `MerchPlacementEntity`, and `MerchSectionEntity`, with no autofix/remediation. They remain observational unless current source/gates demonstrate a defect.
+- Re-read current Merchandising `AGENTS.md`, `README.md`, `composer.json`, `.gitignore`, PHPUnit configuration, and prior orchestration journal.
+- Re-read mandatory Objecting, Cruding, Viewing, and Interfacing governance/README/Composer contracts, plus Canonization normative platform projection and Gating ownership/executable Canon052 rule.
+- Current Composer topology already declares Objecting/Cruding/Viewing/Interfacing and `gating/gate`, uses local development path repositories with symlinks, and keeps consumer `.gating/` ignored except for the tracked README boundary marker.
+
+### Target-to-canon mapping
+
+- Canon018/020: `merchandising/merch` maps to `App\Merchandising\` with role-first Symfony source roots.
+- Canon021: generic application CRUD remains owned by Cruding; no generic CRUD machinery is introduced here.
+- Objecting boundary: reusable lifecycle/system-field packs stay in Objecting; Merchandising keeps only its business persistence responsibility.
+- Viewing/Interfacing boundary: Merchandising emits stable UI-ready composition contracts; it does not own final shell/template rendering.
+- Canon052: executable Gating comes from the installed `gating/gate` package; consumer `.gating/` may contain only generated artifacts plus the non-executable README marker.
+
+### Market and maturity contour
+
+- Mature commerce platforms expose merchant search/discovery controls such as boosts, filters and recommendations, and headless merchandising systems expose channel-aware collections and conditional filtering.
+- RC-critical scope remains deterministic composition, boundary enforcement, lifecycle safety, diagnostics, executable canon compliance, and reproducible verification.
+- Growth remains merchant-authored pin/boost/bury/hide policies, scheduling, preview/simulation, experimentation, analytics, and richer recommendation/personalization inputs through typed source contracts.
+
+### Selected RC-critical workstream
+
+- Verify whether the supplied Canon052 RED still has a current repository cause before applying any artifact-tree mutation.
+- If the current tree is already canonical, avoid repeating a quarantine/removal wave; instead refresh deterministic/runtime/behavioral evidence, record the stale-report reconciliation, and integrate the evidence-only journal checkpoint.
+
+### Gates to run
+
+- `composer validate --strict --check-lock`, current `gate`, PHPStan, PHPUnit, PHP-CS-Fixer dry-run, behavioral/Playwright acceptance, standalone Symfony runtime, Doctrine mapping, fresh source-level Inspecting only if the inspected source scope changes, then exact Git diff/upstream reconciliation and publication.
+
+### Acceptance verification
+
+- `composer validate --strict --check-lock`: PASS.
+- Current repository `gate`: PASS — 10 rules, 0 failed, 0 warning, 0 suppressed, 0 skipped. This confirms the historical Canon052 failure is stale for the current topology; no recurrent `.gating/` source-tree remediation is justified.
+- Aggregate `composer quality`: PASS — PHPStan 0 errors; PHPUnit 16/16 with 88 assertions; PHP-CS-Fixer dry-run clean; Playwright 1/1 against the repository-owned bounded HTTP harness; behavioral/UI coverage evidence refreshed; Gating 10/10.
+- Standalone Symfony runtime: PASS on Symfony 8.1.7 / PHP 8.4.13 with `App\Merchandising\Kernel`.
+- Doctrine mapping validation: PASS; database synchronicity intentionally skipped by the mapping-only command because this task changes no persistence metadata.
+- Runtime reuse policy: the managed PHP server on `127.0.0.1:8000` was not running; an unmanaged listener returned HTTP 500, so no restart was performed. Playwright used the repository-owned test server on `127.0.0.1:8092`.
+- No `src/` PHP, browser/mobile UI, navigation, forms, interactions, or user flows changed. The supplied source-level Inspecting report therefore remains applicable to the unchanged inspected scope and was not duplicated solely to rediscover the same three medium observations.
+- No screenshot is required because no user-observable UI implementation changed.
+
+### Что имеем? Что осталось?
+
+The current repository is deterministically green and the upstream Canon052 RED has no current target-state cause. The only task-owned mutation is this factual orchestration journal checkpoint. Remaining work is exact diff review, signed commit, safe push to the synchronized upstream, and final clean HEAD/upstream confirmation.
+
 
 
 

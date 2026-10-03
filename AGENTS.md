@@ -157,14 +157,18 @@ composer.lock
 установленные dependencies
 ```
 
-Общие приложения подключаются явно, в частности:
+Обязательный application dependency contour:
 
 ```text
-Cruding
-Interfacing
-Viewing
 Objecting
+Cruding
+Collectioning
+Tabling
+Viewing
+Interfacing
 ```
+
+Каждый application явно объявляет эти package dependencies и development path/symlink wiring там, где локальная sibling-разработка предусмотрена Composer-конфигурацией.
 
 Cruding, Interfacing и Viewing могут работать:
 
@@ -236,11 +240,11 @@ version
 Текущий режим разработки — Entity First.
 
 - Entity, Doctrine mapping, relations, constraints и indexes являются источником текущей схемы.
-- Локальная development database перестраивается под текущую Entity-модель.
-- Doctrine migrations сейчас не являются частью рабочего процесса, если задача прямо не требует иного.
+- Doctrine migrations должны воспроизводить текущую Entity/metadata schema из чистой базы и после применения не оставлять schema diff.
+- Schema parity проверяется в изолированной среде, отдельно от рабочей developer database.
 - Текущая модель сразу заменяет старую модель.
 - После переноса всех callers устаревшие aliases, wrappers и параллельные реализации удаляются.
-- Doctrine mapping и фактическая локальная схема проверяются после изменения.
+- Doctrine mapping, migrations и schema parity проверяются после изменения persistence metadata.
 
 ## 11. Локальная разработка и production
 
