@@ -980,6 +980,20 @@ Reconnaissance and bounded implementation are complete. Remaining work is determ
 
 The implementation is deterministically and behaviorally green on every execution capability that returned a repository result. The only RC acceptance gap is fresh post-mutation Inspecting plus the runtime/Doctrine spot checks currently unavailable behind Console MCP HTTP 502. Safe Git integration/publication can proceed without misclassifying that infrastructure gap as a code failure.
 
+### Post-integration closure
+
+- Signed implementation commit `31327ebf2dd7e63065e34043a1e69c1938d6260a` (`fix: deduplicate merchandising source topology`) was created from exactly the four task-owned files and pushed to `origin/master`.
+- The temporary Console MCP 502 condition cleared on bounded retry.
+- Fresh post-mutation Inspecting completed at `D:\\PhpstormProjects\\www\\Inspecting\\.inspecting\\reports\\D--PhpstormProjects-www-Merchandising-20261003-201144.json`: PHPStan 0 errors; the same three medium `solid.srp.low-property-cohesion` entity observations remain, with no autofix/remediation and no finding attributable to the collector change.
+- `runtime:about`: PASS on Symfony 8.1.7 / PHP 8.4.13 with `App\\Merchandising\\Kernel`.
+- Doctrine mapping validation: PASS; database synchronicity intentionally skipped by the repository's mapping-only command because persistence metadata did not change.
+- Aggregate `composer quality`: PASS — PHPStan 0 errors; PHPUnit 16/16 with 88 assertions; PHP-CS-Fixer clean; Playwright 1/1; behavioral/UI evidence refreshed; Gating 10/10.
+- No user-observable UI changed, so screenshot generation is not applicable to this diagnostics-only hardening.
+
+### Что имеем? Что осталось?
+
+The substantive RC objective is complete and published. Only this evidence-only journal closure remains to be committed/pushed, followed by final clean HEAD/upstream confirmation.
+
 
 
 
