@@ -110,14 +110,17 @@ final readonly class MerchCandidateCollector implements MerchCandidateCollectorI
      */
     public function registeredSources(): array
     {
-        $contracts = [];
+        /** @var array<string, MerchSourceContractView> $contractsByFingerprint */
+        $contractsByFingerprint = [];
 
         foreach ($this->sources as $source) {
             if ($source instanceof MerchDirectNeighborSourceInterface) {
-                $contracts[] = $source->contractView();
+                $contract = $source->contractView();
+                $contractsByFingerprint[self::sourceContractFingerprint($contract)] = $contract;
             }
         }
 
+        $contracts = array_values($contractsByFingerprint);
         usort(
             $contracts,
             static fn (MerchSourceContractView $left, MerchSourceContractView $right): int => [
@@ -136,6 +139,17 @@ final readonly class MerchCandidateCollector implements MerchCandidateCollectorI
         );
 
         return $contracts;
+    }
+
+    /**
+     * Returns a stable complete-contract fingerprint so duplicate DI registrations do not duplicate topology diagnostics.
+     */
+    private static function sourceContractFingerprint(MerchSourceContractView $contract): string
+    {
+        return json_encode(
+            $contract->toArray(),
+            JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE,
+        );
     }
 
 }

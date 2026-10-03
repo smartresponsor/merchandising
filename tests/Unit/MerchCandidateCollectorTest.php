@@ -126,7 +126,7 @@ final class MerchCandidateCollectorTest extends TestCase
             }
         };
 
-        $contracts = (new MerchCandidateCollector([$zulu, $direct, $plain]))->registeredSources();
+        $contracts = (new MerchCandidateCollector([$zulu, $direct, $plain, $direct]))->registeredSources();
 
         self::assertCount(2, $contracts);
         self::assertSame(['catalog', 'zulu'], array_map(

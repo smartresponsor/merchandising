@@ -928,6 +928,58 @@ The RC hardening is green and bounded to deterministic source-topology diagnosti
 
 The deterministic topology hardening is materially implemented and verified. During this window a concurrent orchestration stream committed and published the source/test patch as `2f03ce3` (`fix: stabilize merchandising source topology`); after a fresh `git fetch origin --prune`, `master` remains synchronized with `origin/master`. The only remaining task-owned worktree change is this journal checkpoint; remaining work is its signed commit/push and final clean/upstream confirmation.
 
+## 2026-10-03 — engine-20261003193306-merchandising-1a4edb
+
+### Reconnaissance and baseline
+
+- Resolved `D:\\PhpstormProjects\\www\\Merchandising` through Console MCP. Baseline: clean `master` at `89087b5648442fce8c28879d6790d822e8c13789`, synchronized with `origin/master`.
+- Read the task specification, current Merchandising governance/README/Composer manifest, architecture/source-contract docs, collector/tests, mandatory Objecting/Cruding/Viewing/Interfacing contracts, Gating, and Canonization Canon052.
+- The supplied fingerprint `303fa70b0d7cc72213c4905484f568d0dbeb3126ae9e2fe875358a03e3009ef8` records historical Canon052 failure from a copied consumer Gating tree. Current `.gating/` is artifact-only, so that RED is stale for this HEAD.
+- Market contour checked against current Adobe Commerce merchandising/recommendation capabilities and headless commerce practice: deterministic source-backed composition/diagnostics remain RC-critical; AI reranking, personalization, experimentation, preview, and richer merchant authoring remain growth.
+
+### Target-to-canon mapping
+
+- `merchandising/merch` remains under `App\\Merchandising\\` with Symfony-oriented role-first roots.
+- Cruding retains generic CRUD; Objecting retains reusable system fields; Viewing/Interfacing retain rendering/shell responsibility.
+- Canon052 remains satisfied by installed `gating/gate`, standard Composer integration, and artifact-only consumer `.gating/`.
+- No Domain/Port/Adapter/Adaptor taxonomy, neighbor-table acquisition, or generic CRUD duplication is introduced.
+
+### Selected RC-critical workstream
+
+- `registeredSources()` was deterministically sorted but emitted exact duplicate direct-neighbor contracts when the same source service was registered more than once.
+- Deduplicate exact serialized contract views before sorting so repeated Symfony DI registration cannot change machine-readable topology diagnostics.
+- Add regression coverage and document the invariant.
+
+### Growth workstream
+
+- Merchant pin/boost/bury/hide rules, scheduling, preview/simulation, experimentation, analytics, and richer recommendation/personalization inputs remain post-RC.
+
+### Gates to run
+
+- Changed-file PHP lint, PHPUnit, PHPStan, CS dry-run, aggregate quality including Playwright/behavioral evidence and Gating, strict Composer validation/check-lock, post-mutation Inspecting where applicable, Git reconciliation, signed commit/push, and final clean/upstream inspection.
+
+### Что имеем? Что осталось?
+
+Reconnaissance and bounded implementation are complete. Remaining work is deterministic verification, Inspecting acceptance after source mutation, Git integration/publication, and final state inspection.
+
+### Acceptance verification
+
+- Changed-file PHP lint: PASS for `src/Service/MerchCandidateCollector.php` and `tests/Unit/MerchCandidateCollectorTest.php`.
+- PHPUnit: PASS — 16 tests / 88 assertions.
+- PHPStan: PASS — 0 errors.
+- PHP-CS-Fixer dry-run: PASS — 0/39 fixable files.
+- Current Gating: PASS — 10 rules, 0 failed/warning/suppressed/skipped; the historical Canon052 RED remains stale for the present artifact-only `.gating/` topology.
+- `composer validate --strict --check-lock`: PASS.
+- Behavioral evidence producer: PASS; `var/coverage/behavioral-ui.json` refreshed.
+- Playwright: PASS — 1/1 standalone JSON endpoint contract using the repository-owned bounded server on `127.0.0.1:8092`.
+- Runtime reuse probe: no managed server is running on `127.0.0.1:8000`; no restart was performed because this change does not require a persistent runtime.
+- `runtime:about`, Doctrine mapping, aggregate `quality`, Inspecting status, and a bounded fresh post-mutation Inspecting run were attempted through Console MCP and returned upstream HTTP 502. These are execution-plane infrastructure failures, not repository test failures. Fresh Inspecting remains required because `src/` changed; the pre-mutation report was consumed and contains only three medium, non-autofixable entity cohesion observations unrelated to this collector change.
+- No browser/mobile UI implementation, navigation, form, or interaction changed; new screenshot evidence is not applicable.
+
+### Что имеем? Что осталось?
+
+The implementation is deterministically and behaviorally green on every execution capability that returned a repository result. The only RC acceptance gap is fresh post-mutation Inspecting plus the runtime/Doctrine spot checks currently unavailable behind Console MCP HTTP 502. Safe Git integration/publication can proceed without misclassifying that infrastructure gap as a code failure.
+
 
 
 
